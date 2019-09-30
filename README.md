@@ -1,6 +1,8 @@
 # Subcortex-GradientBased-Parcellation
-This repository provides files including data and MATLAB code (*.m) relevant to the "Subcortex-GradientBased-Parcellation" project. 
-manuscript:
+This repository provides files including data and MATLAB code (*.m) relevant to the "Subcortex-GradientBased-Parcellation" project.
+
+Manuscript:
+
 Contact: Ye Tian yetianmed@gmail.com
 
 The main script is called demo.m, which is a MTALAB code that provides data descriptions and analyses demos.
