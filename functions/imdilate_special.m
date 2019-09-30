@@ -1,19 +1,4 @@
 function a=imdilate_special(a)
-%Test data
-% clear all
-% close all
-% a=zeros(50,50,50);
-% cnt=[20,20,20];
-% for i=-10:10
-%     for j=-10:10
-%         for k=-10:10
-%             if sqrt(i^2+j^2+k^2)<8
-%                 a(cnt(1)-i,cnt(2)-j,cnt(3)-k)=rand+1; 
-%             end
-%         end
-%     end
-% end
-% figure; imagesc(squeeze(a(20,:,:)),[1,2]); 
 
 ind=find(abs(a)); 
 
