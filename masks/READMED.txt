@@ -1,6 +1,6 @@
-Binary masks used in this study
+# Binary masks used in this study
 
-# gunzip *.nii.gz files before running MATLAB code. 
+gunzip *.nii.gz files before running MATLAB code. 
 
 GMmask.nii.gz: a binary mask for the whole brain gray matter
 
