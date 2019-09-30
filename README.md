@@ -1,1 +1,0 @@
-# Subcortex-GradientBased-Parcellation
