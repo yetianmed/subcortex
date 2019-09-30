@@ -29,8 +29,8 @@ FWHM=6;
 % Voxel size in mm
 voxelsize=2; 
 
-dataFile1=[pwd,'/examples/rfMRI_REST1_LR_hp2000_clean.nii.gz'];% L-R phase encoding
-dataFile2=[pwd,'/examples/rfMRI_REST1_RL_hp2000_clean.nii.gz'];% R-L phase encoding
+dataFile1=[pwd,'/MapGradient/rfMRI_REST1_LR_hp2000_clean.nii.gz'];% L-R phase encoding
+dataFile2=[pwd,'/MapGradient/rfMRI_REST1_RL_hp2000_clean.nii.gz'];% R-L phase encoding
 
 % fMRI signals from the two runs are concatenated 
 fprintf('Computing similarity matrix\n')
