@@ -1,9 +1,8 @@
-% This script provides data descriptions and analyses demos relevant to the
+% This demo script provides data descriptions and analyses demos relevant to the
 % Subcortex-GradientBased-Parcellation project
-% Data for each section is located in each corresponding subfolder 
-% Code is located in #functions#
-% Group level hierachical parcellation for the subcortex is provided in
-% #Group-Parcellation#. 
+% Data for each section can be accessed in each corresponding subfolder directly or via
+% external link
+% Call functions from #functions#
 
 % Contact Ye Tian, yetianmed@gmail.com
 
@@ -29,14 +28,14 @@ FWHM=6;
 % Voxel size in mm
 voxelsize=2; 
 
+% fMRI data
+% Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
 dataFile1=[pwd,'/MapGradient/rfMRI_REST1_LR_hp2000_clean.nii.gz'];% L-R phase encoding
 dataFile2=[pwd,'/MapGradient/rfMRI_REST1_RL_hp2000_clean.nii.gz'];% R-L phase encoding
 
-% fMRI signals from the two runs are concatenated 
+% fMRI signals from the two runs are concatenated before computing the functional connectivity 
 fprintf('Computing similarity matrix\n')
-s=compute_similarity(dataFile1,dataFile2,insFile,gmFile,FWHM,voxelsize);
-
-save(['REST1_',SubID,'_s.mat'],'s');
+s=compute_similarity(dataFile1,dataFile2,insFile,gmFile,FWHM,voxelsize); % Save the matrix for further analysis
 
 %% 2.Map functional connectivity gradient
 
@@ -53,6 +52,7 @@ insFile='subcortex_mask.nii';
 ind_ins_org=find(ins_msk); % The original subcortical mask
 
 % Load similarity matrix computed based on subcortex_mask.nii
+% Download this data via: 
 load savg.mat savg
 
 % Target subcortical region to compute gradient
@@ -71,6 +71,7 @@ Vn=2; % order of eigenvector to compute.
       % Vn=2: 2nd eigenvector (Gradient 1)
       % Vn=3; 3rd eigenvector to compute (Gradient 2)
       % Vn=4; 4th eigenvector to compute (Gradient 3)
+      % The first eigenvector (Vn=1) is constant and thus discarded.  
       
 % Prefix name for output nii images
 [~,name]=fileparts(roiFile);
@@ -112,6 +113,7 @@ mat2nii(img,[name,'_tensor.nii'],size(img),32,'subcortex_mask.nii');
 fprintf('Write out %s\n',[name,'_mask.nii'])
 mat2nii(msk,[name,'_mask.nii'],size(msk),32,'subcortex_mask.nii'); 
 fprintf('Next: do tractography in Diffusion Toolkit using the DTI model\n')
+% Parameters: Angel threshold: 35; -rseed 20;Propogation algorithm: Interpolated Streamline 
 
 % If visulize tensors in MRtrix
 img_mrtrix=tensor_model_2(Gx_org,Gy_org,Gz_org);
@@ -130,12 +132,16 @@ addpath ./functions % code
 % For demo, we show ventral only which is the group of streamlines propogated in
 % subcortex_mask_part1.nii: hippocampus+thalamus+amygdala
 
-TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; % Streamlines genarated by Diffusion Toolkit. Visulize streamlines in Trackvis
+% Streamline file genarated in Diffusion Toolkit
+% Visulize in Trackvis
+% Download the data via: 
+TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; 
                                                                                                                    
 Lthresh=160; %Length threshold of streamlines. Streamlines shorted than Lthresh are discarded. The value is flexible based on the actual streamlines 
 J=300; % Depends on the length of streamlines. Works well here.
 % It is time consuming to compute the distance 
-% For demo, distance is preloaded
+% For demo, distance is preloaded. 
+% Download the data via:
 Preload=1;
 if Preload
     load subcortex_mask_part1_track_distance.mat M dsym voxelsize
@@ -196,7 +202,7 @@ mat2nii(img_mag_null,['GradmNull_',name,'.nii'],size(img_mag_null),32,roiFile);
 
 addpath ./GeoNull
 
-% Use the function diversity_curve.m, 100 null diversity curves can be mapped.
+% Null diversity curves (n=100) are mapped using diversity_curve.m,
 % Load example data
 load dcurve_avg_vn2_null_part1.mat
 
@@ -368,6 +374,7 @@ FWHM=6;
 voxelsize=2; 
 
 % fMRI data
+% Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
 dataFile1=[pwd,'/Homogeneity/rfMRI_REST2_LR_hp2000_clean.nii.gz'];% L-R phase encoding
 dataFile2=[pwd,'/Homogeneity/rfMRI_REST2_RL_hp2000_clean.nii.gz'];% R-L phase encoding
 
@@ -433,7 +440,8 @@ if Preload
     % NOTE: This preloaded classifer was trained based on the similarity matrix
     % from an old version of subcortex mask, which is slightly larger than proposed parcellation. 
     % The old version of subcortex mask is called 
-    % subcortex_mask_Thresh47_symmetric_union.nii provided in ./examples
+    % subcortex_mask_Thresh47_symmetric_union.nii
+    % Download the classifier via: 
     fprintf('Loading precomputed SVM classifer for region %d\n',reg);
     load region1_Dil2_train.mat Out img_dil ind
 else
@@ -447,6 +455,7 @@ load SVM_Subjects.mat subject_test;
 
 % Load example data 
 % Similarity matrix for one testing subject
+% Download the similarity matrix via: 
 SubID='100206';
 load REST2_100206_s.mat s
 
