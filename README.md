@@ -9,7 +9,7 @@ The main script is called demo.m, which is a MTALAB code that provides data desc
 
 All required functions are in the folder named "functions".
 
-Each folder corresponds to one of the main sections in this project containing relevant source data and computed metrics.
+Each folder below corresponds to one of the main sections in this project containing relevant source data and computed metrics:
 
 1. MapGradient
 
