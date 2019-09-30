@@ -111,13 +111,13 @@ fprintf('Write out %s\n',[name,'_tensor.nii'])
 mat2nii(img,[name,'_tensor.nii'],size(img),32,'subcortex_mask.nii');
 fprintf('Write out %s\n',[name,'_mask.nii'])
 mat2nii(msk,[name,'_mask.nii'],size(msk),32,'subcortex_mask.nii'); 
-fprintf('Next: do tractography using Diffusion Toolkit\n')
+fprintf('Next: do tractography in Diffusion Toolkit using the DTI model\n')
 
 % If visulize tensors in MRtrix
 img_mrtrix=tensor_model_2(Gx_org,Gy_org,Gz_org);
 fprintf('Write out %s\n',[name,'_tensor_model_2.nii'])
 mat2nii(img_mrtrix,[name,'_tensor_model_2.nii'],size(img_mrtrix),32,'subcortex_mask.nii');
-fprintf('Next, visulize tensors in MRtrix software\n')
+fprintf('Next, visulize tensors in MRtrix(mrview)\n')
 
 %% 4.Diversity curves
 
@@ -130,7 +130,8 @@ addpath ./functions % code
 % For demo, we show ventral only which is the group of streamlines propogated in
 % subcortex_mask_part1.nii: hippocampus+thalamus+amygdala
 
-TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; % Streamlines genarated by Diffusion Toolkit
+TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; % Streamlines genarated by Diffusion Toolkit. Visulize streamlines in Trackvis
+                                                                                                                   
 Lthresh=160; %Length threshold of streamlines. Streamlines shorted than Lthresh are discarded. The value is flexible based on the actual streamlines 
 J=300; % Depends on the length of streamlines. Works well here.
 % It is time consuming to compute the distance 
@@ -366,6 +367,7 @@ FWHM=6;
 % Voxel size in mm
 voxelsize=2; 
 
+% fMRI data
 dataFile1=[pwd,'/Homogeneity/rfMRI_REST2_LR_hp2000_clean.nii.gz'];% L-R phase encoding
 dataFile2=[pwd,'/Homogeneity/rfMRI_REST2_RL_hp2000_clean.nii.gz'];% R-L phase encoding
 
