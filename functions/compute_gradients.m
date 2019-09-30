@@ -1,8 +1,7 @@
 function [Gx_org,Gy_org,Gz_org]=compute_gradients(img_pca,ins_msk,Mag,Streamlines,Subject)
 % INPUT
-% img_pca is the image for which gradients are computed
+% img_pca is the image in which gradients are computed
 % ins_msk is a mask. Only gradients for voxels in the mask are shown in
-% figure
 % Mag=0: background image is img_pca
 % Mag=1: background image is gradient magnitude
 % Streamlines: 0-> no; 1->Yes
@@ -22,12 +21,12 @@ img_new(ind_ins)=img_pca(ind_ins);
 img_pca=img_new; %Remove gradients computed in boundary voxels added by dilation
 
 [Gy,Gx,Gz,mag]=compute_grads_local(img_pca);
-% %Swap order of Gx and Gy because the first output of the function is the
-% %gradient along direction of increasing column subscripts.
-% %With this re-ordering
-% %Gx is gradient along rows    (1st dimension)
-% %Gy is gradient along columns (2nd dimension)
-% %Gz is gradeint in 3rd dimensions
+%Swap order of Gx and Gy because the first output of the function is the
+%gradient along direction of increasing column subscripts.
+%With this re-ordering
+%Gx is gradient along rows    (1st dimension)
+%Gy is gradient along columns (2nd dimension)
+%Gz is gradeint in 3rd dimensions
 
 img_mag=mag;
 
