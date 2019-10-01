@@ -6,8 +6,8 @@ function regressor=task_regressor(TR,T,taskfile)
 %the relative magnitude of each stimulus (usually set to 1) 
 % Example: 
 % taskfile='fear.txt';
-% 32.08	    18	1
-% 74.223	18	1
+% 32.08  18	 1
+% 74.223 18	 1
 % 116.365	18	1
 
 %TR: in seconds
