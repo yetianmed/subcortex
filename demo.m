@@ -160,9 +160,8 @@ magFile='subcortex_mask_part1_Average_Vn2_magnitude_symmetric.nii';
 % Eigenmap 
 eigFile='subcortex_mask_part1_Average_Vn2_eigenvector.nii';
 
-% Check the distribution of distance to determine the threshold
-ThreshDist=1; 
-[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,voxelsize,magFile,eigFile,ThreshDist);
+% Map diversity curves for eigenmap and gradient magnitude
+[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,voxelsize,magFile,eigFile);
 % dcurve_mag_clust1_avg: diversity curve mapped for gradient magnitude
 % dcurve_eig_clust1_avg: diversity curve mapped for eigenmap
 % length_x1: length of streamline in mm
