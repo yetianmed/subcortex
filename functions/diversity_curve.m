@@ -1,4 +1,4 @@
-function [dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,L,VoxelSize,Avg_mag,Avg_eig,ThreshDist)
+function [dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,L,VoxelSize,Avg_mag,Avg_eig)
 
 % This srcipt computes the diversity curve for each streamline 
 % The are all in cropped space
@@ -80,8 +80,8 @@ for i=1:size(dcurve_mag_clust1,2)
     dcurve_eig_clust1_reg(:,i)=interp1(1:length(ix),dcurve_eig_clust1(ix,i),linspace(1,length(ix),L));
 end
 
-%ThreshDist=1; % Check the distribution of distance to decide the Threshold
-ind_keep=find(dist<ThreshDist); %Index of the streamlines kept
+ThreshDist=mean(dist); % Omit diversity curves with a warp distance exceeding the mean 
+ind_keep=find(dist<ThreshDist); %Index of the diversity curves remained
 
 fprintf('%d of %d streamlines kept\n',length(ind_keep),size(dcurve_mag_clust1,2));
 dcurve_mag_clust1_avg=mean(dcurve_mag_clust1_reg(:,ind_keep),2);
