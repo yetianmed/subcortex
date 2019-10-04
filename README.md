@@ -7,21 +7,21 @@ Contact: Ye Tian yetianmed@gmail.com
 
 The main script is called demo.m, which is a MTALAB code that provides data descriptions and analyses demos.
 
-All required functions are in the folder named "functions".
+All required functions are in the folder named ***functions***.
 
 Each folder below corresponds to one of the main sections in the manuscript, containing relevant source data and computed metrics:
 
 ### MapGradient
 
-   Map the functional connectivity gradient for the human subcortex
+   Map the functional connectivity gradient for the human subcortex.
 
 ### fMRI-tractoraphy
 
-   Model the connectivity gradient using fMRI-tractography
+   Model the functional connectivity gradient using fMRI-tractography.
 
 ### GeoNull
 
-   Compute the geometry-null model
+   Compute the geometry-preserving null model.
 
 ### Group-Parcellation
 
