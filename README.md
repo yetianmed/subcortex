@@ -39,7 +39,7 @@ Each folder below corresponds to one of the main sections in the manuscript, con
    
 ### Behavior
 
-   Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA). The resulted independent components are provided in MATLAB format (.mat) and spreadsheet(.xlsx).
+   Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA). The resulted independent components are provided in the form of a spreadsheet (individual x behavioral dimensions).
 
 
 
