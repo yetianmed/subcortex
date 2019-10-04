@@ -1,4 +1,4 @@
-# Parcellation atlas overview
+# Atlas overview
 
 | Magnetic strength | Level | Number of regions | File name | Spatial resolution |
 | ----------------- | ----- | ----------------- | --------- | ------------------ |
