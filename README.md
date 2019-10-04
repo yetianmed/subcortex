@@ -11,33 +11,33 @@ All required functions are in the folder named "functions".
 
 Each folder below corresponds to one of the main sections in the manuscript, containing relevant source data and computed metrics:
 
-### MapGradient
+#### MapGradient
 
    Map the functional connectivity gradient for the human subcortex
 
-### fMRI-tractoraphy
+#### fMRI-tractoraphy
 
    Model the connectivity gradient using fMRI-tractography
 
-### GeoNull
+#### GeoNull
 
    Compute the geometry-null model
 
-### Group-Parcellation
+#### Group-Parcellation
 
    3T: Four levels of hierarchical functional parcellation for the human subcortex based on 3T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 2mm isotropic. Label for each region in a given atlas is provided in a text file. 
 
    7T: Four levels of hierarchical functional parcellation for the human subcortex based on 7T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 1.6mm isotropic.
 
-### Homogeneity
+#### Homogeneity
 
    Estimate the functional homogeneity of delineated atlas.
 
-### Individual-Parcellation
+#### Individual-Parcellation
 
    Train a support-vector machine (SVM) classifier and apply the classifier to predict individual parcellation.
 
-### Behavior
+#### Behavior
 
    Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA). The resulted independent components are provided in MATLAB format (.mat) and spreadsheet(.xlsx).
 
