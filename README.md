@@ -1,4 +1,4 @@
-# Subcortex-GradientBased-Parcellation
+# Subcortex Parcellation Atlas (SPA)
 This repository provides files including data and MATLAB code (*.m) relevant to the "Subcortex-GradientBased-Parcellation" project.
 
 Manuscript:
