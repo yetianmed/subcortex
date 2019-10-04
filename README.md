@@ -25,9 +25,9 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### Group-Parcellation
 
-   3T: Four levels of hierarchical functional parcellation for the human subcortex based on 3T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 2mm isotropic. Label for each region in a given atlas is provided in a text file. 
+   ***3T:*** Four levels of hierarchical functional parcellation for the human subcortex based on 3T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 2mm isotropic. Label for each region in a given atlas is provided in a text file. 
 
-   7T: Four levels of hierarchical functional parcellation for the human subcortex based on 7T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 1.6mm isotropic.
+   ***7T:*** Four levels of hierarchical functional parcellation for the human subcortex based on 7T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 1.6mm isotropic.
 
 ### Homogeneity
 
