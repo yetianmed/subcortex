@@ -10,3 +10,5 @@
 | 7T | II | 34 | subcortex_parcellation_L2_7T.nii | 2mm isotropic |
 | 7T | III | 54 | subcortex_parcellation_L3_7T.nii | 2mm isotropic |
 | 7T | IV | 62 | subcortex_parcellation_L4_7T.nii | 2mm isotropic |
+
+**All atlases are in MNI standard space (MNI ICBM 152 nonlinear 6th generation)**
