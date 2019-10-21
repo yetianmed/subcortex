@@ -1,7 +1,7 @@
 # Subcortex Parcellation Atlas (SPA)
-This repository provides files including data and MATLAB code (*.m) relevant to 
+This repository provides files including data and MATLAB code (*.m) relevant to manuscript: 
 
-*Manuscript: Functional Gradients and Parcellation of the Human Subcortex*
+***Functional Gradients and Parcellation of the Human Subcortex***
 
 Contact: Ye Tian yetianmed@gmail.com
 
@@ -13,11 +13,11 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### MapGradient
 
-   Map the functional connectivity gradient for the human subcortex.
+   Map the functional connectivity gradients for the human subcortex.
 
 ### fMRI-tractoraphy
 
-   Model the functional connectivity gradient using fMRI-tractography.
+   Model the functional connectivity gradients using fMRI-tractography.
 
 ### GeoNull
 
