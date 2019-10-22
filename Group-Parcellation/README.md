@@ -1,6 +1,6 @@
 ## Atlas overview
 
-| Magnetic strength | Level | Number of regions | File name | Spatial resolution|
+| Magnetic strength | Scale | Number of regions | File name | Spatial resolution|
 | ----------------- | ----- | ----------------- | --------- | ------------------ |
 | 3T | I | 16 | subcortex_parcellation_S1_3T.nii | 2mm isotropic |
 | 3T | II | 32 | subcortex_parcellation_S2_3T.nii | 2mm isotropic |
