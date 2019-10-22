@@ -1,8 +1,9 @@
 % This demo script provides data descriptions and analyses demos relevant to the
-% Subcortex-GradientBased-Parcellation project
+% manuscript: Functional Gradients and Parcellation of the Human Subcortex
 % Data for each section can be accessed in each corresponding subfolder directly or via
 % external link
 % Call functions from #functions#
+% Code is tested in MATLAB R2017b 
 
 % Contact Ye Tian, yetianmed@gmail.com
 
@@ -10,7 +11,6 @@
 
 addpath ./MapGradient % example data
 addpath ./masks
-addpath ./functions/wishart
 addpath ./functions 
 
 % Subcortex mask 
@@ -19,23 +19,13 @@ insFile='subcortex_mask.nii';
 % Gray matter mask
 gmFile='GMmask.nii';
 
-% Subject ID
-SubID='100206';
-
-% Gaussian smoothness in mm
-FWHM=6; 
-
-% Voxel size in mm
-voxelsize=2; 
-
-% fMRI data
-% Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
-dataFile1=[pwd,'/MapGradient/rfMRI_REST1_LR_hp2000_clean.nii.gz'];% L-R phase encoding
-dataFile2=[pwd,'/MapGradient/rfMRI_REST1_RL_hp2000_clean.nii.gz'];% R-L phase encoding
-
-% fMRI signals from the two runs are concatenated before computing the functional connectivity 
 fprintf('Computing similarity matrix\n')
-s=compute_similarity(dataFile1,dataFile2,insFile,gmFile,FWHM,voxelsize); % Save the matrix for further analysis
+
+% Load time series of all gray matter voxels
+load x.mat % x is a matrix of dimension time x number of gray matter voxels. 
+           % x is computed from preprocess.m
+
+s=compute_similarity(x,insFile,gmFile); % Save the similarity matrix for further analysis
 
 %% 2.Map functional connectivity gradient
 
@@ -65,7 +55,7 @@ roiFile='subcortex_mask.nii';
 Mag=0; % Mag=0; -> Print out slices, background image is eigenmap;
        % Mag=1; ->Print out slices, background image is gradient magnitude
        % Modify colormap in cont_model.m
-Streamlines=1; % 1->Write out vector file for tensor; 0->do not compute
+Streamlines=1; % 1->Write out vector file for tensor fitting; 0->do not compute
 
 Vn=2; % order of eigenvector to compute.
       % Vn=2: 2nd eigenvector (Gradient 1)
@@ -81,7 +71,7 @@ Prefix=[name,'_Average_'];
 % This function writes out two nii images including one eigenmap and one gradient
 % magnitude 
 % Write out a vector file when Streamlines=1
-cont_model(savg,ind_ins_org,roiFile,Mag,Streamlines,Prefix,Vn)
+cont_model(savg,ind_ins_org,roiFile,Mag,Streamlines,Prefix,Vn);
 
 %% 3.fMRI tractography
 
@@ -160,13 +150,14 @@ magFile='subcortex_mask_part1_Average_Vn2_magnitude_symmetric.nii';
 % Eigenmap 
 eigFile='subcortex_mask_part1_Average_Vn2_eigenvector.nii';
 
-% Map diversity curves for eigenmap and gradient magnitude
-[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,voxelsize,magFile,eigFile);
+% Check the distribution of distance to determine the threshold
+ThreshDist=1; 
+[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,voxelsize,magFile,eigFile,ThreshDist);
 % dcurve_mag_clust1_avg: diversity curve mapped for gradient magnitude
 % dcurve_eig_clust1_avg: diversity curve mapped for eigenmap
 % length_x1: length of streamline in mm
 
-%% 5.Geometry-preserving null model
+%% 5.Null data that control for the gradient arisen from the matter of chance, effect of geometry and spatial smoothing
 
 addpath ./GeoNull
 addpath ./masks
@@ -351,7 +342,7 @@ addpath ./masks
 % Compute the mean homogeneity for Level 2 parcellation and its matched random
 % parcellations for single subject (SubID 100206)
 % Use REST2 session fMRI data
-mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_L2_3T.nii'];
+mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_S2_3T.nii'];
 
 % Generate random parcellations with overall matched parcel size and shape
 % to the empirical parcellation
@@ -382,7 +373,7 @@ dataFile2=[pwd,'/Homogeneity/rfMRI_REST2_RL_hp2000_clean.nii.gz'];% R-L phase en
 % exp_avg: mean homogeneity for the empirical parcellation 
 % exp_avg_null: mean homogeneity for random parcellattions
 % Repeat this process for all subjects (n=1021) with REST2 session data
-% See ./examples/subcortex_parcellation_L2_3T_homogeneity.mat
+% Example: subcortex_parcellation_S2_3T_homogeneity.mat
 
 %% 9.Individual parcellation
 
@@ -392,7 +383,7 @@ addpath ./Individual-Parcellation
 % indiviudal parcellation
 
 % Group parcellation
-mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_L4_3T.nii'];
+mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_S4_3T.nii'];
 [~,parc]=read(mskFile);
 
 %Extent of dilation (integer value)
