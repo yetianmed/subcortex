@@ -4,9 +4,9 @@
 % And concatenate two runs
 clear
 close all
-addpath ./masks
-addpath ./functions/wishart
-addpath ./functions 
+addpath ../masks
+addpath ../functions/wishart
+addpath ../functions 
 
 % Subcortex mask 
 insFile='subcortex_mask.nii';
