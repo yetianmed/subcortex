@@ -1,7 +1,7 @@
 # Subcortex Parcellation Atlas (SPA)
 This repository provides files including data and MATLAB code (*.m) relevant to the manuscript: 
 
-***Functional Gradients and Parcellation of the Human Subcortex***
+**Functional Gradients and Parcellation of the Human Subcortex**
 
 Contact: Ye Tian yetianmed@gmail.com
 
