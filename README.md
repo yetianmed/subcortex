@@ -7,7 +7,7 @@ Contact: Ye Tian yetianmed@gmail.com
 
 The main script is called demo.m, which is a MTALAB code that provides data descriptions and analyses demos.
 
-All required functions are provided in ***functions***.
+MATLAB codes are provided in ***functions***.
 
 Each folder below corresponds to one of the main sections in the manuscript, containing relevant source data and computed metrics:
 
