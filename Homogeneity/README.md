@@ -1,2 +1,5 @@
-random_parcels_subcortex_parcellation_S2_3T.mat: Random parcellations that matched with Scale II parcellation
-subcortex_parcellation_S2_3T_homogeneity.mat: Homogneity estimated for Scale II parcellation 
+### Example files of parcellation homogeneity estimation 
+
+subcortex_parcellation_S2_3T_homogeneity.mat: Homogeneity estimated for Scale II parcellation and matched random parcellations
+
+random_parcels_subcortex_parcellation_S2_3T.mat: Random parcellations
