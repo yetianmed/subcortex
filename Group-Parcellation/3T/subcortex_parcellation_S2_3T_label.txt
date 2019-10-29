@@ -2,8 +2,8 @@ aHIP-rh
 pHIP-rh
 lAMY-rh
 mAMY-rh
-THA-LP-rh
-THA-MP-rh
+THA-DP-rh
+THA-VP-rh
 THA-VA-rh
 THA-DA-rh
 NAc-shell-rh
@@ -18,8 +18,8 @@ aHIP-lh
 pHIP-lh
 lAMY-lh
 mAMY-lh
-THA-LP-lh
-THA-MP-lh
+THA-DP-lh
+THA-VP-lh
 THA-VA-lh
 THA-DA-lh
 NAc-shell-lh
