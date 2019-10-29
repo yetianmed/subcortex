@@ -13,4 +13,4 @@
 
 **All atlases are in MNI standard space (MNI ICBM 152 nonlinear 6th generation)**
 
-**Four hierarchical scales are provied for both 3T and 7T parcellation**
+**Four hierarchical scales are provided for both 3T and 7T parcellation**
