@@ -3,7 +3,7 @@
 % Data for each section can be accessed in each corresponding subfolder directly or via
 % external link
 % Call functions from #functions#
-% Code is tested in MATLAB R2017b 
+% Code was tested in MATLAB R2017b 
 
 % Contact Ye Tian, yetianmed@gmail.com
 
