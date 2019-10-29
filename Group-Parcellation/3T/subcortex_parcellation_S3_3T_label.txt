@@ -2,8 +2,8 @@ HIP-head-m-rh
 HIP-head-l-rh
 HIP-body-rh
 HIP-tail-rh
-THA-MPm-rh
-THA-MPl-rh
+THA-VPm-rh
+THA-VPl-rh
 THA-VAi-rh
 THA-VAs-rh
 THA-DAm-rh
@@ -18,7 +18,7 @@ CAU-body-rh
 CAU-tail-rh
 lAMY-rh
 mAMY-rh
-THA-LP-rh
+THA-DP-rh
 NAc-shell-rh
 NAc-core-rh
 pGP-rh
@@ -27,8 +27,8 @@ HIP-head-m-lh
 HIP-head-l-lh
 HIP-body-lh
 HIP-tail-lh
-THA-MPm-lh
-THA-MPl-lh
+THA-VPm-lh
+THA-VPl-lh
 THA-VAi-lh
 THA-VAs-lh
 THA-DAm-lh
@@ -43,7 +43,7 @@ CAU-body-lh
 CAU-tail-lh
 lAMY-lh
 mAMY-lh
-THA-LP-lh
+THA-DP-lh
 NAc-shell-lh
 NAc-core-lh
 pGP-lh
