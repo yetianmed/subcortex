@@ -4,7 +4,7 @@
 
 2.subcortex_mask_Average_Vn2_magnitude.nii: Gradient magnitude of Gradient I
 
-They are cropped for a better visulization 
+They are in cropped space (bounding box)for better visulization 
 
 3.trackvis_txt: Colormap
 
