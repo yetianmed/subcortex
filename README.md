@@ -35,11 +35,11 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### Individual-Parcellation
 
-   Train a support-vector machine (SVM) classifier and apply the classifier to predict individual parcellation.
+   Train a support-vector machine (SVM) classifier and apply the classifier to generate personalized parcellation.
    
 ### Behavior
 
-   Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA). The resulted independent components are provided in the form of a spreadsheet (individual x behavioral dimensions).
+   Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA).
 
 
 
