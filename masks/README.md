@@ -1,4 +1,4 @@
-### Binary masks used in this study
+### Binary masks
 
 GMmask.nii: Gray matter mask
 
