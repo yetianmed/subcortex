@@ -12,3 +12,5 @@
 | subcortex_parcellation_S4_7T.nii | 7T | IV | 62 | 1.6mm isotropic |
 
 **All atlases are in MNI standard space (MNI ICBM 152 nonlinear 6th generation)**
+
+**Four hierarchical scales are provied for both 3T and 7T parcellation**
