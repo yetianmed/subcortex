@@ -21,7 +21,7 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### GeoNull
 
-   Compute the geometry-preserving null model.
+   Model selection. Compare gradient magnitude with null data.
 
 ### Group-Parcellation
 
