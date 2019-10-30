@@ -1,7 +1,9 @@
 ## Functional Gradients and Parcellation of the Human Subcortex
 Data and code (MATLAB) related to:
 
-Contact: Dr Ye Tian yetianmed@gmail.com or ye.tian2@unimelb.edu.au
+Contact: Dr Ye Tian 
+
+Email: yetianmed@gmail.com or ye.tian2@unimelb.edu.au
 
 **demo.m** provides data description and analysis demo.
 
