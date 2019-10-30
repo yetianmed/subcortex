@@ -11,7 +11,7 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### MapGradient
 
-   Map the functional connectivity gradients for the human subcortex.
+   Map the functional connectivity gradients in the human subcortex.
 
 ### fMRI-tractoraphy
 
@@ -19,7 +19,7 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### GeoNull
 
-   Model selection. Compare gradient magnitude with null data.
+   Model selection: Compare gradient magnitude with null data.
 
 ### Group-Parcellation
 
