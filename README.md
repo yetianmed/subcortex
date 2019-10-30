@@ -7,7 +7,7 @@ Email: yetianmed@gmail.com or ye.tian2@unimelb.edu.au
 
 **demo.m** provides data description and analysis demo.
 
-MATLAB code is provided in ***functions***.
+MATLAB code is provided in **functions**.
 
 Each folder below corresponds to one of the main sections in the manuscript, containing relevant source data and computed metrics:
 
