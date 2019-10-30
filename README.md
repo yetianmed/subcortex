@@ -3,7 +3,7 @@ Data and code (MATLAB) related to:
 
 Contact: Dr Ye Tian yetianmed@gmail.com or ye.tian2@unimelb.edu.au
 
-The main script is called demo.m, which is a MTALAB code that provides data descriptions and analyses demos.
+**demo.m** provides data description and analysis demo.
 
 MATLAB code is provided in ***functions***.
 
