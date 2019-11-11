@@ -19,7 +19,16 @@
 ### CIFTI
 **CIFTI format is provided for studies using Human Connectome Project (HCP) pipeline**
 
+Note that the boundaries for the subcortical altas do not necessarily correspond with the boundaries of the existing subcortical structures defined as part of FreeSurfer/HCP pipeline. Any voxels outside the HCP pre-defined subcortical stucture are deleted. 
+
 ***dscalar.nii***: Subcortex atlas (3T) only
+
+| File name | 
+| ----------------- |
+|Tian_Subcortex_S1_3T.dscalar.nii |
+|Tian_Subcortex_S2_3T.dscalar.nii |
+|Tian_Subcortex_S3_3T.dscalar.nii |
+|Tian_Subcortex_S4_3T.dscalar.nii |
 
 ***dlabel.nii***: Subcortex atlas (3T) incorporated with existing cortical atlas 
 
@@ -33,3 +42,6 @@
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S2.dlabel.nii |  
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S3.dlabel.nii | 
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S4.dlabel.nii | 
+
+Gordon et al 2016, Cerebral Cortex;
+Glasser et al 2016, Nature
