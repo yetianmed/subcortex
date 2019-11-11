@@ -1,4 +1,5 @@
-## Functional Gradients and Parcellation of the Human Subcortex
+## Hierarchical Atlas of the Human Subcortex Mapped with Functional Connectivity Gradients
+
 Data and code (MATLAB, *.m) related to:
 
 Contact: Dr Ye Tian, Dr Andrew Zalesky
