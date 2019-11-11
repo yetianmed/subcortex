@@ -36,7 +36,7 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### Individual-Parcellation
 
-   Train a support-vector machine (SVM) classifier and apply the classifier to generate personalized parcellation.
+   Personalize subcortical atlas using support-vector machine learning. 
    
 ### Behavior
 
