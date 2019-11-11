@@ -25,10 +25,10 @@ Note that the boundaries for the subcortical altas do not necessarily correspond
 
 | File name | 
 | ----------------- |
-|Tian_Subcortex_S1_3T.dscalar.nii |
-|Tian_Subcortex_S2_3T.dscalar.nii |
-|Tian_Subcortex_S3_3T.dscalar.nii |
-|Tian_Subcortex_S4_3T.dscalar.nii |
+|Tian_Subcortex_S1_3T_32k.dscalar.nii |
+|Tian_Subcortex_S2_3T_32k.dscalar.nii |
+|Tian_Subcortex_S3_3T_32k.dscalar.nii |
+|Tian_Subcortex_S4_3T_32k.dscalar.nii |
 
 ***dlabel.nii***: Subcortex atlas (3T) incorporated with existing cortical atlas 
 
