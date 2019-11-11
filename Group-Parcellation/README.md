@@ -20,7 +20,7 @@
 ### CIFTI
 **CIFTI format is provided for studies using Human Connectome Project (HCP) pipeline**
 
-Note that the boundaries for the subcortical altas do not necessarily correspond with the boundaries of the existing subcortical structures defined as part of FreeSurfer/HCP pipeline. Any voxels outside the HCP pre-defined subcortical stucture are deleted. 
+Note that the boundaries for the subcortical altas do not necessarily correspond with the boundaries of the existing subcortical structures defined as part of FreeSurfer/HCP pipeline. Any voxels outside the HCP pre-defined subcortical structure are deleted. 
 
 ***dscalar.nii***: Subcortex atlas (3T) only
 
