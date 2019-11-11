@@ -1,0 +1,16 @@
+HIP-rh
+AMY-rh
+pTHA-rh
+aTHA-rh
+NAc-rh
+GP-rh
+PUT-rh
+CAU-rh
+HIP-lh
+AMY-lh
+pTHA-lh
+aTHA-lh
+NAc-lh
+GP-lh
+PUT-lh
+CAU-lh
