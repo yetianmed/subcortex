@@ -4,7 +4,7 @@ Data and code (MATLAB, *.m) related to:
 
 Contact: Dr Ye Tian, Dr Andrew Zalesky
 
-Email: yetianmed@gmail.com or azalesky@unimelb.edu.au
+Email: yetianmed@gmail.com, azalesky@unimelb.edu.au
 
 **demo.m** provides data description and analysis demo.
 
