@@ -21,21 +21,19 @@ gmFile='GMmask.nii';
 
 fprintf('Computing similarity matrix\n')
 
-% Load time series of all gray matter voxels
+% Load time series of all gray matter voxels from one individual  
 load x.mat % x is a matrix of dimension time x number of gray matter voxels. 
            % x is computed from preprocess.m
-
+           % Download this matrix via:
 s=compute_similarity(x,insFile,gmFile); % Save the similarity matrix for further analysis
 
 %% 2.Map functional connectivity gradient
 
-addpath ./MapGradient % example data and code
+addpath ./MapGradient % example data 
 addpath ./masks
 addpath ./functions % code
 
-% Load group averaged similariy matrix. Alternatively, load individual data
-% such as REST1_100206_s.mat to compute individual gradient map
-
+% Load group averaged similariy matrix. 
 % Subcortex mask
 insFile='subcortex_mask.nii';
 [~,ins_msk]=read(insFile);
@@ -339,7 +337,7 @@ addpath ./functions
 addpath ./masks
 
 % Example:
-% Compute the mean homogeneity for Level 2 parcellation and its matched random
+% Compute the mean homogeneity for Scale II parcellation and its matched random
 % parcellations for single subject (SubID 100206)
 % Use REST2 session fMRI data
 mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_S2_3T.nii'];
@@ -412,64 +410,51 @@ fprintf('Dilated-to-original ratio (voxels): %0.2f (min: %0.2f, max: %0.2f)\n',m
 
 % Train SVM classifer 
 % Random selected training samples (n=100)
-load SVM_Subjects.mat subject_train
 
-% similariry matrix in training samples
-% sFiles is a string variable with a list of name for the similarity data for
-% all the training samples
-% Load each sFile sequencially in svm_train.m for the sake of memory
-for i=1:length(subject_train)
-    sFiles{i}=[num2str(subject_train(i)),'_s.mat'];
-end
+% load SVM_Subjects.mat subject_train
+% 
+% % similariry matrix in training samples
+% % sFiles is a string variable with a list of name for the similarity data for
+% % all the training samples
+% % Load each sFile sequencially in svm_train.m for the sake of memory
+% for i=1:length(subject_train)
+%     sFiles{i}=[num2str(subject_train(i)),'_s.mat'];
+% end
 
 % This part is time consuming
 reg=1;% 1->N,region to train
-Preload=1;
-if Preload
-    % Load example data
-    % NOTE: This preloaded classifer was trained based on the similarity matrix
-    % from an old version of subcortex mask, which is slightly larger than proposed parcellation. 
-    % The old version of subcortex mask is called 
-    % subcortex_mask_Thresh47_symmetric_union.nii
-    % Download the classifier via: 
-    fprintf('Loading precomputed SVM classifer for region %d\n',reg);
-    load region1_Dil2_train.mat Out img_dil ind
-else
-    Out=svm_train(subject_train,sFiles,reg,ind);
-    save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_dil','ind','-v7.3');
-end
+
+Out=svm_train(subject_train,sFiles,reg,ind);
+save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_dil','ind','-v7.3');
 
 % Predict individual parcellation
 % Testing samples
-load SVM_Subjects.mat subject_test;
+% load SVM_Subjects.mat subject_test;
 
 % Load example data 
 % Similarity matrix for one testing subject
 % Download the similarity matrix via: 
-SubID='100206';
-load REST2_100206_s.mat s
+SubID='001'; % 001 is not the original HCP ID.
+load REST2_001_s.mat s
 
 % Compute the probabilistic map 
 img_dil=img_dil{reg};
 [y_img,dice]=svm_test(img_dil,Out,s,ind);
-mat2nii(y_img,'region1_probmap_100206.nii',size(y_img),32,mskFile);
+mat2nii(y_img,'region1_probmap_001.nii',size(y_img),32,mskFile);
 fprintf('region %d,subject %s,Dice=%.2f\n',reg,SubID,dice)
 
-%% 10. Behavioral analysis 
+%% 10. Behavioral dimensions
 
 addpath ./Behavior
+addpath ./functions
 
 % Dimensionality reduction using ICA 
 % Load data
-load ica5_final_Regress1_NumBot500.mat
-% w_final: demixing matrix, weights of individual item on each component
-% s_final: component score for every individual
-% maglist: subject ID
+load ica.mat
+% w_final: demixing matrix, demxing weights of individual items on each component
 % header3: name of 109 behavioral item that contributes to ICA 
-% A spreadsheet version of s_final with subject ID is also provided,see 
-% ./Behavior/behavioral_components.xlsx
 
-% Label for each behavioral dimension
+% Label of each behavioral dimension
 labels={'Cognition','Illicit Substance Use','Tobacco Use','Personality-Emotion','Mental Health'};
 
 % Plot demixing matrix
@@ -492,7 +477,6 @@ for i=1:5
     
     xlabel(['IC',num2str(i)],'FontSize',12);
 end
-%% 11.Test subcortical networks correlates of behaviors using Network-based statistic(NBS) toolbox (Zalesky et al 2010)
 
 
 
