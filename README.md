@@ -3,7 +3,7 @@ Data and code (MATLAB, *.m) related to:
 
 Contact: Dr Ye Tian, Dr Andrew Zalesky
 
-Email: yetianmed@gmail.com or ye.tian2@unimelb.edu.au
+Email: yetianmed@gmail.com or azalesky@unimelb.edu.au
 
 **demo.m** provides data description and analysis demo.
 
@@ -25,9 +25,9 @@ Each folder below corresponds to one of the main sections in the manuscript, con
 
 ### Group-Parcellation
 
-   **3T:** Four scales of hierarchical parcellation for the human subcortex delineated using 3T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 2mm isotropic. Label of each region in a given atlas is provided in a text file. 
+   **3T:** Group consensus hierarchical atlas of the human subcortex delineated using 3 Tesla functonal MRI data.  
 
-   **7T:** Four scales of hierarchical parcellation for the human subcortex delineated using 7T resting-state fMRI data. The atlas is in MNI standard space with a spatial resolution of 1.6mm isotropic.
+   **7T:** Group consensus hierarchical atlas of the human subcortex delineated using 7 Tesla functonal MRI data.  
 
 ### Homogeneity
 
