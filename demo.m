@@ -1,11 +1,14 @@
-% This demo script provides data descriptions and analyses demos relevant to the
-% manuscript: Functional Gradients and Parcellation of the Human Subcortex
+% This demo script provides data description and analysis demos related to: 
+% Tian et al 
+% Hierarchical Atlas of the Human Subcortex Mapped with Functional Connectivity Gradients
+
 % Data for each section can be accessed in each corresponding subfolder directly or via
 % external link
 % Call functions from #functions#
 % Code was tested in MATLAB R2017b 
 
-% Contact Ye Tian, yetianmed@gmail.com
+% Contact Dr Ye Tian, Dr Andrew Zalesky 
+% yetianmed@gmail.com, azalesky@unimelb.edu.au          
 
 %% 1.Compute subcortex-to-subcortex similarity matrix 
 
@@ -24,7 +27,8 @@ fprintf('Computing similarity matrix\n')
 % Load time series of all gray matter voxels from one individual  
 load x.mat % x is a matrix of dimension time x number of gray matter voxels. 
            % x is computed from preprocess.m
-           % Download this matrix via:
+           % Download this matrix via: 
+           % http://connectome.org.au/subcortex/x.zip
 s=compute_similarity(x,insFile,gmFile); % Save the similarity matrix for further analysis
 
 %% 2.Map functional connectivity gradient
@@ -40,7 +44,8 @@ insFile='subcortex_mask.nii';
 ind_ins_org=find(ins_msk); % The original subcortical mask
 
 % Load similarity matrix computed based on subcortex_mask.nii
-% Download this data via: 
+% Download data via: 
+% http://connectome.org.au/subcortex/savg.zip
 load savg.mat savg
 
 % Target subcortical region to compute gradient
@@ -122,14 +127,16 @@ addpath ./functions % code
 
 % Streamline file genarated in Diffusion Toolkit
 % Visulize in Trackvis
-% Download the data via: 
+% Data download via: 
+% http://connectome.org.au/subcortex/subcortex_mask_part1_Average_Vn2_VectorFile.zip
 TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; 
                                                                                                                    
 Lthresh=160; %Length threshold of streamlines. Streamlines shorted than Lthresh are discarded. The value is flexible based on the actual streamlines 
 J=300; % Depends on the length of streamlines. Works well here.
 % It is time consuming to compute the distance 
 % For demo, distance is preloaded. 
-% Download the data via:
+% Download distance data via:
+% http://connectome.org.au/subcortex/subcortex_mask_part1_track_distance.zip
 Preload=1;
 if Preload
     load subcortex_mask_part1_track_distance.mat M dsym voxelsize
@@ -434,8 +441,9 @@ save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_d
 % Load example data 
 % Similarity matrix for one testing subject
 % Download the similarity matrix via: 
+% http://connectome.org.au/subcortex/REST2_001_s.zip
 SubID='001'; % 001 is not the original HCP ID.
-load REST2_001_s.mat s
+load REST2_001_s.mat s 
 
 % Compute the probabilistic map 
 img_dil=img_dil{reg};
