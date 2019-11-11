@@ -16,6 +16,7 @@
 
 **Four hierarchical scales are provided for both 3T and 7T parcellation**
 
+
 ### CIFTI
 **CIFTI format is provided for studies using Human Connectome Project (HCP) pipeline**
 
