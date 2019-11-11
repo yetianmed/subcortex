@@ -44,5 +44,5 @@ Note that the boundaries for the subcortical altas do not necessarily correspond
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S3.dlabel.nii | 
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S4.dlabel.nii | 
 
-Gordon et al 2016, Cerebral Cortex;
-Glasser et al 2016, Nature
+*Gordon et al 2016, Cerebral Cortex;
+Glasser et al 2016, Nature*
