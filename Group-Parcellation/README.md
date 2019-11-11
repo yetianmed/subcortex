@@ -17,3 +17,19 @@
 **Four hierarchical scales are provided for both 3T and 7T parcellation**
 
 ### CIFTI
+**CIFTI format is provided for studies using Human Connectome Project (HCP) pipeline**
+
+***dscalar.nii***: Subcortex atlas (3T) only
+
+***dlabel.nii***: Subcortex atlas (3T) incorporated with existing cortical atlas 
+
+| File name | Cortical atlas |
+| ----------------- |----------------------------- |
+| Gordon333.32k_fs_LR_Tian_Subcortex_S1.dlabel.nii | Gordon et al 2016 |
+| Gordon333.32k_fs_LR_Tian_Subcortex_S2.dlabel.nii | Gordon et al 2016 |
+| Gordon333.32k_fs_LR_Tian_Subcortex_S3.dlabel.nii | Gordon et al 2016 |
+| Gordon333.32k_fs_LR_Tian_Subcortex_S4.dlabel.nii | Gordon et al 2016 |
+| Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S1.dlabel.nii | Glasser et al 2016 |
+| Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S2.dlabel.nii | Glasser et al 2016 |
+| Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S3.dlabel.nii | Glasser et al 2016 |
+| Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S4.dlabel.nii | Glasser et al 2016 |
