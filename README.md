@@ -4,7 +4,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
-- Availale in four scales as well as 3 and 7 Tesla versions. 
+- Available in four hierarchical scales as well as 3 and 7 Tesla versions. 
 - Personalizable to represent individual variation in regional boundaries.
 - Seamlessly integratable into well-established cortex-only parcellation atlases.
 
