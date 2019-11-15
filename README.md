@@ -3,9 +3,10 @@
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
 
 **Atlas features:** 
-- Parcellation of the human subcortex representing a consensus among more than 1000 healthy adults.
+- Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
 - Availale in four scales as well as 3 and 7 Tesla versions. 
-- Personalizable to represent individual variation in boundaries. 
+- Personalizable to represent individual variation in boundaries.
+- Atlas can be seamlessly incorporated into well-established cortex-only parcellation atlases.
 
 **How was the atlas mapped?**
 - Boundaries delineated at locations of abrupt spatial change in resting-state functional connectivity gradients. 
