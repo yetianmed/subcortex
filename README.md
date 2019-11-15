@@ -1,4 +1,4 @@
-![alt test](images/logo.jpg)
+![alt test](images/logo2.png)
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
 
@@ -11,7 +11,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **Atlas scales:** The atlas is available in four scales, labeled Scale I-IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale is bilaterally symmetric and defines a self-contained parcellation atlas. 
 
-**Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel) format for download in the directory called *Group-Parcellation*. If you are only here to download the atlas, this is the only directory that you need to visit. Both 3 and 7 Tesla versions are provided in 6th generation MNI space at voxel resolutions of 2 and 1.6 mm, respectively. This is the same space used by the Human Connectome Project. To facilitate whole-brain connectome mapping, the 3T version of the atlas has been integrated into several existing cortex-only parcellation atlases and the combined subcortex-cortex atlases are provided for download in CIFTI format. A naming convention (nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
+**Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the directory called *Group-Parcellation*. If you are only here to download the atlas, this is the only directory that you need to visit. Both 3 and 7 Tesla versions are provided in 6th generation MNI space at voxel resolutions of 2 and 1.6 mm, respectively. This is the same space used by the Human Connectome Project. To facilitate whole-brain connectome mapping, the 3T version of the atlas has been integrated into several existing cortex-only parcellation atlases and the combined subcortex-cortex atlases are provided for download in CIFTI format. A naming convention (nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
 **Subcortical mask** The volumetric mask used to define subcortical voxels differs slightly 
 
