@@ -1,5 +1,6 @@
 ![alt test](images/logo2.png)
 
+
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
 
 **Atlas features:** 
