@@ -1,4 +1,4 @@
-## Hierarchical Atlas of the Human Subcortex Mapped with Functional Connectivity Gradients
+![alt test](images/logo.jpg)
 
 Data and code (MATLAB, *.m) related to:
 
