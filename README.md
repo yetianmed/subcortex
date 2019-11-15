@@ -1,17 +1,14 @@
-![alt test](images/logo2.png)
-
+![alt test](images/logo.jpg)
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
 
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
 - Availale in four scales as well as 3 and 7 Tesla versions. 
-- Personalizable to represent individual variation in boundaries.
+- Personalizable to represent individual variation in regional boundaries.
 - Seamlessly integratable into well-established cortex-only parcellation atlases.
 
-**How was the atlas mapped?**
-- Boundaries delineated at locations of abrupt spatial change in resting-state functional connectivity gradients. 
-- Formal model selection and null hypothesis testing used to determine whether gradient magnitude peaks are sufficiently large to warrant boundary delineation.  
+**How was the atlas mapped?** The guiding principle was reconciliation of two seemingly contradictory representations of brain topography: i) hard boundaries between discrete regions; and, ii) continuous gradients of spatial variation. Laplacian eigenmaps were used to represent spatial gradients in resting-state functional connectivity across the subcortical volume. An analogue of diffusion MRI tractography, called gradientography, was developed to identify and parameterize gradient magnitude peaks. Formal model selection and null hypothesis testing was used to determine whether gradient magnitude peaks were sufficiently large to warrant boundary delineation. This process was repeated recursively for each new region delineated, until the null hypothesis of an absence of any boundaries could not be rejected for any region.     
 
 **Atlas scales:** The atlas is available in four scales, labeled Scale I-IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale defines a self-contained parcellation atlas.
 
