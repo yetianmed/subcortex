@@ -2,6 +2,10 @@
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
 
+```
+hddh
+```
+
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
 - Available in four hierarchical scales as well as 3 and 7 Tesla versions. 
