@@ -1,6 +1,6 @@
-![alt test](images/logo.jpg)
+![alt test](images/logo2.jpg)
 
-We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. 
+We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code used to map the atlas.  
 
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
