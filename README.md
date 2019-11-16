@@ -15,7 +15,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **What atlas scale should I use?** 
 
-**Should I use the 3T or 7T version?** Both versions are similar but not the same. The 3T version comprises fewer regions at Scales II-IV and is sampled at a voxel resolution of 2mm, whereas the 7T version is sampled at 1.6mm. We recommend matching the 3T version with 3T data and likewise for the 7T version.
+**Should I use the 3T or 7T version?** Both versions are similar but not the same. The 3T version comprises fewer regions at Scales II-IV and is sampled at a voxel resolution of 2mm, whereas the 7T version is sampled at 1.6mm. We recommend using the 3T version with 3T fMRI data and likewise for the 7T version.
 
 **How was the atlas mapped?** The guiding principle was reconciliation of two seemingly contradictory representations of brain topography: i) hard boundaries between discrete regions; and, ii) continuous gradients of spatial variation. Laplacian eigenmaps were used to represent spatial gradients in resting-state functional connectivity across the subcortical volume. An analogue of diffusion MRI tractography, called gradientography, was developed to identify and parameterize gradient magnitude peaks in these spatial gradients. Formal model selection and null hypothesis testing was then used to determine whether gradient magnitude peaks were sufficiently large to warrant boundary delineation. This process was repeated recursively for each new region delineated, until the null hypothesis of an absence of boundaries could not be rejected for any region.
 
