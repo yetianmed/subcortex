@@ -1,4 +1,4 @@
-![alt test](images/logo2.jpg)
+![alt test](images/logo2.png)
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code used to map the atlas.  
 
