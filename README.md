@@ -15,14 +15,11 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **What atlas scale should I choose?** This really depends on the purpose for which you use the atlas. If you intend to incorporate the atlas into an existing cortex-only atlas, choose a scale that is commensurate with the cortex-only atlas. 
 
-
-| Tesla | Scale I    | Scale II   | Scale III | Scale IV   |
-| ----- | ---------- | ---------- |---------- | ---------- |
-| 3T    | 16         | 32         | 50        | 54         |
-| 7T    | 16         | 34         | 54        | 62         |
-
-
-- 3T: Scale I: 16 regions, Scale II, 32 regions, Scale III: 50 regions,   
+*Number of regions*
+|            | Scale I    | Scale II   | Scale III | Scale IV   |
+| ---------- | ---------- | ---------- |---------- | ---------- |
+| 3 Tesla    | 16         | 32         | 50        | 54         |
+| 7 Tesla    | 16         | 34         | 54        | 62         |
 
 **Should I choose the 3T or 7T version?** Both versions are similar but not the same. The 3T version comprises fewer regions at Scales II-IV and is sampled at a voxel resolution of 2mm, whereas the 7T version is sampled at 1.6mm. We recommend using the 3T version of the atlas with 3T fMRI data and likewise for the 7T version.
 
