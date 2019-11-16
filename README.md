@@ -16,6 +16,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 **What atlas scale should I choose?** This really depends on the purpose for which you use the atlas. If you intend to incorporate the atlas into an existing cortex-only atlas, choose a scale that is commensurate with the cortex-only atlas. 
 
 *Number of regions*
+
 |            | Scale I    | Scale II   | Scale III | Scale IV   |
 | ---------- | ---------- | ---------- |---------- | ---------- |
 | 3 Tesla    | 16         | 32         | 50        | 54         |
