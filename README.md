@@ -14,11 +14,11 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 **Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the directory called *Group-Parcellation*. If you are only here to download the atlas, this is the only directory that you need to visit. The atlas is delineated in 6th generation MNI space. This is the same space used by the HCP. To facilitate whole-brain connectome mapping, the 3T version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined subcortex-cortex atlases are provided for download in CIFTI format. A naming convention (nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
 **What atlas scale should I choose?** This really depends on the purpose for which you use the atlas. If you intend to incorporate the atlas into an existing cortex-only atlas, choose a scale that is commensurate with the cortex-only atlas. 
-|       | Scale I    | Scale II   | Scale III | Scale IV   |
+| Tesla | Scale I    | Scale II   | Scale III | Scale IV   |
 | ----- | ---------- | ---------- |---------- | ---------- |
 | 3T    | 16         | 32         | 50        | 54         |
 | 7T    | 16         | 34         | 54        | 62         |
-| ----- | ---------- | ---------- |---------- | ---------- |
+
 
 - 3T: Scale I: 16 regions, Scale II, 32 regions, Scale III: 50 regions,   
 
