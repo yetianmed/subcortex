@@ -2,8 +2,6 @@
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code used to map the atlas. 
 
-=I just want to download the atlas! Where should I go?= Download *Group-Parcellation/3T/*
-
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
 - Available in four hierarchical scales as well as 3 and 7 Tesla versions. 
@@ -13,13 +11,11 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **Atlas scales:** The atlas is available in four scales, labeled Scales I, II, III and IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale is bilaterally symmetric and defines a self-contained parcellation atlas. 
 
-**Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the directory called *Group-Parcellation*. If you are only here to download the atlas, this is the only directory that you need to visit. Both 3 and 7 Tesla versions are delineated in 6th generation MNI space at voxel resolutions of 2 and 1.6 mm, respectively. This is the same space used by the HCP. To facilitate whole-brain connectome mapping, the 3T version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined subcortex-cortex atlases are provided for download in CIFTI format. A naming convention (nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
-
-    
+**Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the directory called *Group-Parcellation*. If you are only here to download the atlas, this is the only directory that you need to visit. The atlas is delineated in 6th generation MNI space. This is the same space used by the HCP. To facilitate whole-brain connectome mapping, the 3T version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined subcortex-cortex atlases are provided for download in CIFTI format. A naming convention (nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
 **What atlas scale should I use?** 
 
-**Should I use the 3 or 7 Tesla atlas?**
+**Should I use the 3T or 7T version?** The 3T and 7T version are similar but not the same. The 3T version comprises fewer regions at Scales II-IV and is sampled at a voxel resolution of 2mm, whereas the 7T version is sampled at 1.6mm. We recommend matching the 3T version with 3T data and likewise for the 7T version.
 
 **How was the atlas mapped?** The guiding principle was reconciliation of two seemingly contradictory representations of brain topography: i) hard boundaries between discrete regions; and, ii) continuous gradients of spatial variation. Laplacian eigenmaps were used to represent spatial gradients in resting-state functional connectivity across the subcortical volume. An analogue of diffusion MRI tractography, called gradientography, was developed to identify and parameterize gradient magnitude peaks in these spatial gradients. Formal model selection and null hypothesis testing was then used to determine whether gradient magnitude peaks were sufficiently large to warrant boundary delineation. This process was repeated recursively for each new region delineated, until the null hypothesis of an absence of boundaries could not be rejected for any region.
 
