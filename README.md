@@ -15,6 +15,8 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **Atlas scales:** The atlas is available in four scales, labeled Scales I, II, III and IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale is bilaterally symmetric and defines a self-contained parcellation atlas. 
 
+![alt test](images/scales.jpg)
+
 **What atlas scale should I choose?** This depends on the purpose for which you intend to use the atlas. The functional connectivity architecture of the subcortex is inherently hierarchical. Atlas scales recapitulate distinct levels of the hierarchy.  If you intend to incorporate the atlas into an existing cortex-only atlas, choose a scale that is commensurate with the cortex-only atlas in terms of the number of regions. Higher scales delineate finer subcortical structrues and thus comprise more regions, as shown in the below table. 
 
 |            | Scale I    | Scale II   | Scale III  | Scale IV   |
@@ -43,7 +45,7 @@ Other contributors: Daniel Margulies and Matthew Glasser
 
 ***
 
-## Data and Code
+### Data and Code
 
 
 The remainder 
