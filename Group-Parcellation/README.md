@@ -1,4 +1,11 @@
-## Atlas overview
+The group-consensus atlas is provided for download in NIFTI and CIFTI (dlabel and dscalar) format. 
+
+The atlas is delineated in 6th generation MNI space (MNI ICBM 152 nonlinear). 
+
+To facilitate whole-brain connectome mapping, the 3 Tesla version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. 
+
+A naming convention (anatomical nomenclature) for all regions is provided in a text file that accompanies each atlas scale.
+
 ### NIFTI
 
 | File name| Magnetic strength | Scale | Number of regions | Spatial resolution|
@@ -12,15 +19,10 @@
 | Tian_Subcortex_S3_7T.nii | 7T | III | 54 | 1.6mm isotropic |
 | Tian_Subcortex_S4_7T.nii | 7T | IV | 62 | 1.6mm isotropic |
 
-**Atlases are in MNI standard space (MNI ICBM 152 nonlinear 6th generation)**
-
-**Four hierarchical scales are provided for both 3T and 7T parcellation**
 
 
 ### CIFTI
-**CIFTI format is provided for studies using Human Connectome Project (HCP) pipeline**
-
-Note that the boundaries for the subcortical altas do not necessarily correspond with the boundaries of the existing subcortical structures defined as part of FreeSurfer/HCP pipeline. Any voxels outside the HCP pre-defined subcortical structure are deleted. 
+The atlas is provided in CIFTI format to facilitate further processing with HCP tools.  
 
 ***dscalar.nii***: Subcortex atlas (3T) only
 
@@ -31,7 +33,7 @@ Note that the boundaries for the subcortical altas do not necessarily correspond
 |Tian_Subcortex_S3_3T_32k.dscalar.nii |
 |Tian_Subcortex_S4_3T_32k.dscalar.nii |
 
-***dlabel.nii***: Subcortex atlas (3T) incorporated with existing cortical atlas 
+***dlabel.nii***: Subcortex atlas (3T) incorporated into existing cortext-only atlases 
 
 | File name | 
 | ----------------- |
