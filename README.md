@@ -36,7 +36,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **To smooth or not?** Spatial smoothing of fMRI data can be detrimental. Given the relatively low signal-to-noise ratio of the subcortex, we minimally smoothed the fMRI data before mapping the atlas (FWHM: 4-6mm). We recommend minimal spatial smoothing of the subcortical fMRI data before connectome mapping.    
 
-**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, durther work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
+**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, further work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
 
 **Contact us**
 
@@ -69,7 +69,7 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
 ### fMRI-tractography
 
-   Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volumne. 
+   Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volume. 
 
 ### GeoNull
 
