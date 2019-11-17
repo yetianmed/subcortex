@@ -41,7 +41,9 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 Other contributors: Daniel Margulies and Matthew Glasser 
 
-##Data and Code
+***
+
+## Data and Code
 
 
 The remainder 
