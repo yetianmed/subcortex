@@ -55,11 +55,11 @@ The minimally pre-processed MRI data used for this project can be downloaded fro
 
 Auxiliary functons are stored in the [functions](/functions/) folder. This folder should be added to your MATLAB path. To enable running particular steps of the pipeline in isolation, we provide MATLAB data files (*.mat) that store several intermediate variables. These files are too large to store here, but can be downloaded from:
 
-- [x.mat](www.connectome.org.au/subcortex/x.zip)
-- [savg.mat](www.connectome.org.au/subcortex/savg.zip)
-- [REST2_001_s.mat](www.connectome.org.au/subcortex/REST2_001_s.zip)
-- [subcortex_mask_part1_Average_Vn2_VectorFile.mat](www.connectome.org.au/subcortex/subcortex_mask_part1_Average_Vn2_VectorFile.zip)
-- [subcortex_mask_part1_track_distance.mat](www.connectome.org.au/subcortex/subcortex_mask_part1_track_distance.zip)
+- [x.zip](www.connectome.org.au/subcortex/x.zip)
+- [savg.zip](www.connectome.org.au/subcortex/savg.zip)
+- [REST2_001_s.zip](www.connectome.org.au/subcortex/REST2_001_s.zip)
+- [subcortex_mask_part1_Average_Vn2_VectorFile.zip](www.connectome.org.au/subcortex/subcortex_mask_part1_Average_Vn2_VectorFile.zip)
+- [subcortex_mask_part1_track_distance.zip](www.connectome.org.au/subcortex/subcortex_mask_part1_track_distance.zip)
 
 ### MapGradient
 
