@@ -49,7 +49,7 @@ Other contributors: Daniel Margulies and Matthew Glasser
 
 ## Data and Code
 
-The rest of this document is sectioned according to folders in this repository. Each folder corresponds to a key processing step in the pipeline used to map the new atlas. Folders store MATLAB code (*.m) and relevant data. 
+The rest of this document is sectioned according to folders in this repository. Each folder corresponds to a key processing step in the pipeline used to map the new atlas.
 
 The minimally pre-processed MRI data used for this project can be downloaded from [ConnectomeDB](https://db.humanconnectome.org/app/template/Login.vm). 
 
