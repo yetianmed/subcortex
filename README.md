@@ -32,7 +32,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **What are the limitations of the atlas?** The new atlas is one of the best performing when benchmarked against alternative fMRI parcellations of the subcortex, using parcel homogeneity and other validation measures to quantify performance. However, it is important to note that subcortical MRI is particularly challening due to relatively low signal-to-noise ratios and other technical difficulties. While we have developed advanced image processing techniques to alleviate some of these challenges, subcortical fMRI is unlikely to achieve the same fidelity of cortical fMRI, particuarly when using single-echo fMRI acqusitions. 
 
-**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, we have not evaluated how well the classifiers generalize to non-HCP fMRI data. Further details can be found in the directory called  
+**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, we have not evaluated how well the classifiers generalize to non-HCP fMRI data. Further details can be found in the directory called *Individual-Parcellation*. 
 
 **Contact us**
 
@@ -41,12 +41,11 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 Other contributors: Daniel Margulies and Matthew Glasser 
 
+The remainder 
+
 
 Data and code (MATLAB, *.m) related to:
 
-Contact: Dr Ye Tian, Dr Andrew Zalesky
-
-Email: yetianmed@gmail.com, azalesky@unimelb.edu.au
 
 **demo.m** provides data description and analysis demo.
 
