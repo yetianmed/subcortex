@@ -47,17 +47,13 @@ Other contributors: Daniel Margulies and Matthew Glasser
 
 ## Data and Code
 
-The remainder of this document is organized according to the folders comprising this repository. Each folder corresponds to a key processing step in the pipeline used to map the the new atlas. Folders store MATLAB code (*.m) 
+The rest of this document is sectioned according to folders. Each folder corresponds to a key processing step in the pipeline used to map the the new atlas. Folders store MATLAB code (*.m) and relevant data. 
 
+The minimally pre-processed MRI data used for this project can be downloaded from [ConnectomeDB](https://db.humanconnectome.org/app/template/Login.vm). 
 
-Data and code (MATLAB, *.m) related to:
+**demo.m** provides a demonstration of the pipeline and shows how the different functions can be integrated. This should be your first port of call. 
 
-
-**demo.m** provides data description and analysis demo.
-
-MATLAB code is provided in **functions**.
-
-Each folder below corresponds to one of the main sections in the manuscript, containing relevant source data and computed metrics:
+Auxiliary functons are stored in the [functions](/functions/) folder.
 
 ### MapGradient
 
