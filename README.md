@@ -79,11 +79,11 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
    This folder stores the group-consensus atlas in NIFTI and CIFTI format for download. 
 
-   **/3T/Subcortex-Only/:**  Scales I-IV of the group-consensus atlas (3 Tesla).
+   [**/3T/Subcortex-Only/:**](Group-Parcellation/3T/Subcortex-Only/)  Scales I-IV of the group-consensus atlas (3 Tesla).
    
-   **/3T/Cortex-Subcortex/:** Scales I-IV of the atlas incorporated into the Glasser and Gordon cortical atlases, yielding combined cortex-subcortex atlases (3 Tesla). 
+   [**/3T/Cortex-Subcortex/:**](/Group-Parcellation/3T/Cortex-Subcortex/) Scales I-IV of the atlas incorporated into the Glasser and Gordon cortical atlases, yielding combined cortex-subcortex atlases (3 Tesla). 
 
-   **7T:** Scales I-IV of the group-consensus atlas (7 Tesla). 
+   [**7T:**](/Group-Parcellation/7T/) Scales I-IV of the group-consensus atlas (7 Tesla). 
 
 ### Homogeneity
 
