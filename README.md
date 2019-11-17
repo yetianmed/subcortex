@@ -47,21 +47,23 @@ Other contributors: Daniel Margulies and Matthew Glasser
 
 ## Data and Code
 
-The rest of this document is sectioned according to folders. Each folder corresponds to a key processing step in the pipeline used to map the the new atlas. Folders store MATLAB code (*.m) and relevant data. 
+The rest of this document is sectioned according to folders in this repository. Each folder corresponds to a key processing step in the pipeline used to map the new atlas. Folders store MATLAB code (*.m) and relevant data. 
 
 The minimally pre-processed MRI data used for this project can be downloaded from [ConnectomeDB](https://db.humanconnectome.org/app/template/Login.vm). 
 
-**demo.m** provides a demonstration of the pipeline and shows how the different functions can be integrated. This should be your first port of call. 
+**demo.m** provides a demonstration of the overall pipeline and shows how the different steps fit together. This should be your first port of call. 
 
-Auxiliary functons are stored in the [functions](/functions/) folder.
+Auxiliary functons are stored in the [functions](/functions/) folder. This folder should be added to your MATLAB path. 
+
+While the atlas mapping pipeline is largely automated, some steps require manual intervention. In particular, seed points must be defined manually for the watershed algorithm. 
 
 ### MapGradient
 
-   Map the functional connectivity gradients in the human subcortex.
+   Compute Laplacian eigenmaps to represent spatial gradients in resting-state functional connectivity across the subcortical volume.
 
-### fMRI-tractoraphy
+### fMRI-tractography
 
-   Model the functional connectivity gradients using fMRI-tractography.
+   Identify peaks in the gradient magnitude images using an analogue of diffuion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories in the subcortical volumne. 
 
 ### GeoNull
 
