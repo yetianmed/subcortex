@@ -34,6 +34,8 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **What are limitations of the atlas?** The new atlas is one of the best performing when benchmarked against alternative fMRI parcellations of the subcortex, using parcel homogeneity and other validation measures to quantify performance. However, it is important to note that subcortical MRI is particularly challening due to relatively low signal-to-noise ratios and other technical difficulties. While we have developed advanced image processing techniques to alleviate some of these challenges, subcortical fMRI is unlikely to achieve the same fidelity of cortical fMRI, particuarly when using single-echo fMRI acqusitions. 
 
+**To smooth or not?** Spatial smoothing of fMRI data can be detrimental. Given the relatively low signal-to-noise ratio of the subcortex, we minimally smoothed the fMRI data before mapping the atlas (FWHM: 4-6mm). We recommend minimal spatial smoothing of the subcortical fMRI data before connectome mapping.    
+
 **How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, durther work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
 
 **Contact us**
@@ -67,29 +69,35 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
 ### fMRI-tractography
 
-   Identify peaks in the gradient magnitude images using an analogue of diffuion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories in the subcortical volumne. 
+   Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volumne. 
 
 ### GeoNull
 
-   Model selection: Compare gradient magnitude with null data.
+   Model selection: Use a geometry-preserving null model to test the null hypothesis that gradient each magnitude peak is not significantly larger in magnitude than what could be expected due to chance and/or the effects of geometry. A regional boundary is delineated at the location of gradient magnitude peaks for which the null hypothesis can be rejected. Spatial variation is represented as a continuum when the null hypothesis cannot be rejected. 
 
 ### Group-Parcellation
 
-   **3T:** Group consensus hierarchical atlas of the human subcortex delineated using 3 Tesla functonal MRI data.  
+   This folder stores the group-consensus atlas in NIFTI and CIFTI format for download. 
 
-   **7T:** Group consensus hierarchical atlas of the human subcortex delineated using 7 Tesla functonal MRI data.  
+   **/3T/Subcortex-Only/:**  3 Tesla version of the group-consensus atlas.
+   
+   **/3T/Cortex-Subcortex/:** 3 Tesla version of the atlas incorporated into the Glasser and Gordon cortical atlases, yielding combined cortex-subcortex atlases. 
+
+   **7T:** 7 Tesla version of the group-consensus atlas. 
 
 ### Homogeneity
 
-   Estimate the functional homogeneity of delineated atlas.
+   Compute the parcel homogenenity of the new atlas and other measures of validation to quantify atlas performance. 
 
 ### Individual-Parcellation
 
-   Personalize subcortical atlas using support-vector machine learning. 
+   Personalize the atlas using support-vector machine learning to account for individual variation in regional boundaries. 
    
 ### Behavior
 
-   Decompose high dimensional behavioral data into 5 dimensions using independent component analysis (ICA).
+   Decompose high-dimensional behavioral data for HCP participants into 5 behavioral dimensions using independent component analysis (ICA). Due to participant data access restrictions imposed by the HCP, the behavioral dimensions cannot be made publicly available. Please contact us for further information.  
+   
+   ***
 
 
 
