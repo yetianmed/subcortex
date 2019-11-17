@@ -9,7 +9,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 - Available in four hierarchical scales as well as 3 and 7 Tesla versions. 
 - Personalizable to represent individual variation in regional boundaries.
 - Seamlessly integratable into established cortex-only parcellation atlases.
-- Includes striatum, thalamus, hippocampus, amygdala and globus pallidus. 
+- Includes subdivisions of the striatum, thalamus, hippocampus, amygdala and globus pallidus. 
 
 **Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the [Group-Parcellation](/Group-Parcellation/) folder. If you are only here to download the atlas, this is the only directory that you need to visit. The atlas is delineated in 6th generation MNI space. This is the same space used by the HCP. To facilitate whole-brain connectome mapping, the 3T version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. A naming convention (anatomical nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
