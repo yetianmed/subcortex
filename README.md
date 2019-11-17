@@ -34,7 +34,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 **What are limitations of the atlas?** The new atlas is one of the best performing when benchmarked against alternative fMRI parcellations of the subcortex, using parcel homogeneity and other validation measures to quantify performance. However, it is important to note that subcortical MRI is particularly challening due to relatively low signal-to-noise ratios and other technical difficulties. While we have developed advanced image processing techniques to alleviate some of these challenges, subcortical fMRI is unlikely to achieve the same fidelity of cortical fMRI, particuarly when using single-echo fMRI acqusitions. 
 
-**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, we have not evaluated how well the classifiers generalize to non-HCP fMRI data. Further details can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
+**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, durther work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
 
 **Contact us**
 
@@ -53,9 +53,8 @@ The minimally pre-processed MRI data used for this project can be downloaded fro
 
 **demo.m** provides a demonstration of the overall pipeline and shows how the different steps fit together. This should be your first port of call. 
 
-Auxiliary functons are stored in the [functions](/functions/) folder. This folder should be added to your MATLAB path. 
+Auxiliary functons are stored in the [functions](/functions/) folder. This folder should be added to your MATLAB path. To enable running particular steps of the pipeline in isolation, we provide MATLAB data files (*.mat) that store several intermediate variables. Thesse files are too big to store here, but can be downloaded from: [x.mat](https://connectome.org.au/subcortex/x.zip)
 
-While the atlas mapping pipeline is largely automated, some steps require manual intervention. In particular, seed points must be defined manually for the watershed algorithm. 
 
 ### MapGradient
 
