@@ -53,7 +53,7 @@ The rest of this document is sectioned according to folders in this repository. 
 
 The minimally pre-processed MRI data used for this project can be downloaded from [ConnectomeDB](https://db.humanconnectome.org/app/template/Login.vm). 
 
-**demo.m** provides a demonstration of the overall pipeline and shows how the different steps fit together. This should be your first port of call. 
+[**demo.m**](/demo.m) provides a demonstration of the overall pipeline and shows how the different steps fit together. This should be your first port of call. 
 
 Auxiliary functons are stored in the [functions](/functions/) folder. This folder should be added to your MATLAB path. To enable running particular steps of the pipeline in isolation, we provide MATLAB data files (*.mat) that store several intermediate variables. These files are too large to store here, but can be downloaded from:
 
