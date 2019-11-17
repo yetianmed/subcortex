@@ -1,1 +1,1 @@
-![alt test](images/3T.jpg)
+![alt test](/subcortex/images/3T.jpg)
