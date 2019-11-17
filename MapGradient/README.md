@@ -4,7 +4,7 @@ subcortex_mask_Average_Vn2_eigenvector.nii: Group-consensus eigenmap of Gradient
 
 subcortex_mask_Average_Vn2_magnitude.nii: Gradient magnitude of Gradient I
 
-They are in cropped space (bounding box) for better visulization 
+Masks are in cropped space (bounding box) to aid visualization 
 
 trackvis_txt: Colormap
 
