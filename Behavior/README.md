@@ -1,1 +1,1 @@
-ica.mat: Five behavioral dimensions (w_final) estimated using independent component analysis
+ica.mat: Consensus de-mixing matrix (w_final) estimated using independent component analysis. Each column corresponds to a behavioral item and each rows corresponds to one of the five dimensions (components). 
