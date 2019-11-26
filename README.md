@@ -41,7 +41,6 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 **Contact us**
 
 - Ye Tian:  yetianmed@gmail.com
-- Daniel Margulies: daniel.margulies@gmail.com
 - Andrew Zalesky: azalesky@unimelb.edu.au
 
 We are grateful to Dr Matt Glasser for provision of the Wishart filter. 
