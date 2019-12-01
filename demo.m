@@ -1,14 +1,13 @@
 % This demo script provides data description and analysis demos related to: 
 % Tian et al 
-% Hierarchical Atlas of the Human Subcortex Mapped with Functional Connectivity Gradients
+% Hierarchical organization of the human subcortex unveiled with functional connectivity gradients
 
 % Data for each section can be accessed in each corresponding subfolder directly or via
 % external link
 % Call functions from #functions#
 % Code was tested in MATLAB R2017b 
 
-% Contact Dr Ye Tian, Dr Andrew Zalesky 
-% yetianmed@gmail.com, azalesky@unimelb.edu.au          
+% Contact Ye Tian, yetianmed@gmail.com     
 
 %% 1.Compute subcortex-to-subcortex similarity matrix 
 
@@ -37,13 +36,12 @@ addpath ./MapGradient % example data
 addpath ./masks
 addpath ./functions % code
 
-% Load group averaged similariy matrix. 
 % Subcortex mask
 insFile='subcortex_mask.nii';
 [~,ins_msk]=read(insFile);
 ind_ins_org=find(ins_msk); % The original subcortical mask
 
-% Load similarity matrix computed based on subcortex_mask.nii
+% Load group-averaged similarity matrix computed based on subcortex_mask.nii
 % Download data via: 
 % http://connectome.org.au/subcortex/savg.zip
 load savg.mat savg
@@ -127,7 +125,7 @@ addpath ./functions % code
 
 % Streamline file genarated in Diffusion Toolkit
 % Visulize in Trackvis
-% Data download via: 
+% Download data via: 
 % http://connectome.org.au/subcortex/subcortex_mask_part1_Average_Vn2_VectorFile.zip
 TrackFile='subcortex_mask_part1_Average_Vn2_VectorFile.trk'; 
                                                                                                                    
@@ -442,7 +440,7 @@ save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_d
 % Similarity matrix for one testing subject
 % Download the similarity matrix via: 
 % http://connectome.org.au/subcortex/REST2_001_s.zip
-SubID='001'; % 001 is not the original HCP ID.
+SubID='001'; % example subject ID
 load REST2_001_s.mat s 
 
 % Compute the probabilistic map 
@@ -460,7 +458,7 @@ addpath ./functions
 % Load data
 load ica.mat
 % w_final: demixing matrix, demxing weights of individual items on each component
-% header3: name of 109 behavioral item that contributes to ICA 
+% header3: names of 109 behavioral items
 
 % Label of each behavioral dimension
 labels={'Cognition','Illicit Substance Use','Tobacco Use','Personality-Emotion','Mental Health'};
