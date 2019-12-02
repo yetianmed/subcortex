@@ -1,12 +1,18 @@
-function [img_pca,img_pca_null]=connectopic_laplacian(s,ind_ins,N,Vn,Null,NumNull)
+function [img_pca,img_pca_null]=connectopic_laplacian(s,ind_ins,N,Vn,Null)
+
 % Input:
 % s: similarity matrx
 % ind_ins: index of subcortical voxels
-% N: size of image (91x109x91)
+% N: size of image (MNI152:91x109x91)
 % K: degree, used when Disparity=1
 % Vn: index of gradient to compute: Vn=2 -> Gradint I; Vn=3 -> Gradient II; Vn=4 -> Gradient III
-% Null: 0->No 1-> Yes
-% NumNull: Number of randomizations
+% Null: property of null data,structural variable including the following:
+
+% Null.NumNull: Number of randomizations if compute the null data
+% Null.T: number of time points in the empirical data
+% Null.FWHM: Gaussian smooth kernel used in the empirical data
+% Null.voxelsize: voxel size in mm in the empirical data
+
 % Output:
 % img_pca: eigenmap (main output)
 % img_pca_null: eigenmap computed from null data
@@ -42,6 +48,8 @@ fprintf('Finding eigenvectors\n');
 % Variance explained
 per=1./d(2:end);
 per=per/sum(per)*100;
+ 
+%figure; plot(per(1:20));
 
 if v(1,Vn)>v(end,Vn)
     y=v(:,Vn);
@@ -52,8 +60,12 @@ min_val=min(y);
 y=y-min_val;
 img_pca(ind_ins)=y;
 
-if Null==1
+if nargin==5
     fprintf('Null Model: Synthetic data + MST + Geometry\n');
+    NumNull=Null.NumNull;
+    T=Null.T;
+    FWHM=Null.FWHM;
+    voxelsize=Null.voxelsize;
     
     % Reference matrix
     fprintf('Generating reference matrix\n')
@@ -71,12 +83,11 @@ if Null==1
     ind_m_upper=find(triu(M,1)); % All the available locations (neighboring only)
     
     % Randomizations
+    
     img_pca_null=zeros([N,NumNull]);
     for nn=1:NumNull
         fprintf('Simulating random data %d\n',nn)
-        x=randn([N,2400]);
-        T=size(x,4);
-        FWHM=6; voxelsize=2;
+        x=randn([N,T]);
         x_ins=zeros(T,length(ind_ins));
         frst=0;
         for i=1:T
