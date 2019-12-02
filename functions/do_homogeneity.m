@@ -1,86 +1,16 @@
-function [exp_avg,exp_avg_null,z]=do_homogeneity(dataFile1,dataFile2,mskFile,parcelFile,gmFile,MM,FWHM,voxelsize)
+function [exp_avg,exp_avg_null,z]=do_homogeneity(x,mskFile,parcelFile,MM)
+% Input:
+% x: fMRI data matrix,dimension: time x number of all gray matter voxels
+% mskFile: subcortex atlas in NIFTI (*.nii)
+% parcelFile: random parcellation in NIFTI (*.nii)
+% MM: number of randomizations
 
 % Output:
-% exp_avg: mean homogeneity for the empirical parcellation 
-% exp_avg_null: mean homogeneity for random parcellations
+% exp_avg: parcellation homogeneity of the empirical parcellation 
+% exp_avg_null: parcellation homogeneity of random parcellations
 % z: internal connectivity matrix between each pair of parcels
 
 warning off
-
-% gray matter mask
-[~,gm_msk]=read(gmFile); ind_msk=find(gm_msk);
-
-% Process images
-% L-R phase encoding
-system(['gunzip ',dataFile1]);
-dataFile1=dataFile1(1:end-3);
-
-fprintf('Reading and smooth data with FWHM=%dmm\n',FWHM);
-[~,data]=read(dataFile1);
-T=size(data,4);
-xLR=zeros(T,length(ind_msk));
-frst=0;
-for i=1:T
-    data(:,:,:,i)=imgaussfilt3(data(:,:,:,i),FWHM/voxelsize/2.355);
-    tmp=data(:,:,:,i);
-    xLR(i,:)=tmp(ind_msk);
-    show_progress(i,T,frst);frst=1;
-end
-
-clear data
-
-% Perform Wishart filter, Glasser et al 2016
-fprintf('Wishart filtering\n')
-DEMDT=1; %Use 1 if demeaning and detrending (e.g. a timeseries) or -1 if not doing this (e.g. a PCA series)
-VN=1; %Initial variance normalization dimensionality
-Iterate=2; %Iterate to convergence of dim estimate and variance normalization
-NDist=2; %Number of Wishart Filters to apply (for most single subject CIFTI grayordinates data 2 works well)
-
-Out=icaDim(xLR',DEMDT,VN,Iterate,NDist);
-xLR=Out.data';
-
-% %Demean and std
-xLR=detrend(xLR,'constant'); xLR=xLR./repmat(std(xLR),T,1); %remove mean and make std=1
-
-clear i j Out
-
-% R-L phase encoding
-system(['gunzip ',dataFile2]);
-dataFile2=dataFile2(1:end-3);
-fprintf('Reading and Smooth Data with FWHM=%dmm\n',FWHM)
-[~,data]=read(dataFile2);
-T=size(data,4); %number of time points
-xRL=zeros(T,length(ind_msk));
-frst=0;
-for i=1:T
-    data(:,:,:,i)=imgaussfilt3(data(:,:,:,i),FWHM/voxelsize/2.355);
-    tmp=data(:,:,:,i);
-    xRL(i,:)=tmp(ind_msk);
-    show_progress(i,T,frst);frst=1;
-end
-clear data
-
-% Perform Wishart filter
-fprintf('Wishart filtering\n')
-DEMDT=1; %Use 1 if demeaning and detrending (e.g. a timeseries) or -1 if not doing this (e.g. a PCA series)
-VN=1; %Initial variance normalization dimensionality
-Iterate=2; %Iterate to convergence of dim estimate and variance normalization
-NDist=2; %Number of Wishart Filters to apply (for most single subject CIFTI grayordinates data 2 works well)
-
-Out=icaDim(xRL',DEMDT,VN,Iterate,NDist);
-xRL=Out.data';
-
-% Demean and std
-xRL=detrend(xRL,'constant'); xRL=xRL./repmat(std(xRL),T,1); %remove mean and make std=1
-
-clear i j Out
-
-% Concatenate the two runs
-x=[xLR;xRL];
-T=size(xLR,1) + size(xRL,1);
-
-% Demean again.
-x=detrend(x,'constant'); x=x./repmat(std(x),T,1); %remove mean and make std=1
 
 fprintf('Computing homogeneity for empirical data\n')
 [~,sub_msk]=read(mskFile);
