@@ -1,14 +1,18 @@
-function [Gx_org,Gy_org,Gz_org]=compute_gradients(img_pca,ins_msk,Mag,Streamlines,Subject)
+function [Gx_org,Gy_org,Gz_org]=compute_gradients(img_pca,ins_msk,Subject,Figures,Streamlines)
+
+% Compute eigenmap's gradient magnitude 
+
 % INPUT
-% img_pca is the image in which gradients are computed
+% img_pca is the eigenmap image in which gradients are computed
 % ins_msk is a mask. Only gradients for voxels in the mask are shown in
-% Mag=0: background image is img_pca
-% Mag=1: background image is gradient magnitude
-% Streamlines: 0-> no; 1->Yes
-% Subject: prefix for output 
+% figure
+% Subject: prefix of output
+% Figures: 0->suppress figures; 1->print figures 
+% slices
+% Streamlines:1-> write out vector file; 0->do not write out vector file 
 
 % OUTPUT
-% Gradient along xyz directions
+% Local gradient orientations for each voxel 
 
 Erode=1; %erosion kernel
 N=size(img_pca);
@@ -21,12 +25,12 @@ img_new(ind_ins)=img_pca(ind_ins);
 img_pca=img_new; %Remove gradients computed in boundary voxels added by dilation
 
 [Gy,Gx,Gz,mag]=compute_grads_local(img_pca);
-%Swap order of Gx and Gy because the first output of the function is the
-%gradient along direction of increasing column subscripts.
-%With this re-ordering
-%Gx is gradient along rows    (1st dimension)
-%Gy is gradient along columns (2nd dimension)
-%Gz is gradeint in 3rd dimensions
+% %Swap order of Gx and Gy because the first output of the function is the
+% %gradient along direction of increasing column subscripts.
+% %With this re-ordering
+% %Gx is gradient along rows    (1st dimension)
+% %Gy is gradient along columns (2nd dimension)
+% %Gz is gradeint in 3rd dimensions
 
 img_mag=mag;
 
@@ -57,6 +61,7 @@ if ~isempty(Subject)
     fprintf('Write out %s\n',[Subject,'eigenvector.nii'])
     mat2nii(img_pca(min_x:max_x,min_y:max_y,min_z:max_z),[Subject,'eigenvector.nii']);
 end
+
 if Streamlines
     u=repmat([1:Nx]',1,Ny); u=repmat(u,1,1,Nz);
     v=repmat([1:Ny],Nx,1); v=repmat(v,1,1,Nz);
@@ -72,150 +77,156 @@ if Streamlines
     save ([Subject,'VectorFile.mat'],'gy','gx','gz','v','u','w','Gx_org','Gy_org','Gz_org');
 end
 
-% Colormap consistent with Trackvis
-mycolormap=dlmread('trackvis_jet.txt');
+if Figures
+    Mag=0; % Mag=0:print out eigenmap slices; 
+           % Mag=1:print out gradient magnitude slices
+    
+    % Colormap consistent with Trackvis
+    mycolormap=dlmread('trackvis_jet.txt');
+    mycolormap(1,:)=1; % White background
+     
+    % Rescale according to the value in the magnitude map
+    img_pca(ind_ins)=img_pca(ind_ins)/0.03*63+2;
+    img_mag(ind_ins)=img_mag(ind_ins)/0.03*63+2;
+    
+%     %Use default colormap
+%     mycolormap=parula(256); mycolormap(1,:)=1; % White background
+%     img_pca(ind_ins)=img_pca(ind_ins)/max(img_pca(ind_ins))*255+2; 
+%     img_mag(ind_ins)=img_mag(ind_ins)/max(img_mag(ind_ins))*255+2;
+%     %Rescale to 256 colors:
+%     %Bin 1->2 is white
+%     %Bin 2->3 is first color
+%     %Bin 256->257 is last color    
 
-% Use default colormap
-% mycolormap=parula(256);
-% Rescale to 256 colors:
-% Bin 1->2 is white
-% Bin 2->3 is first color
-% Bin 256->257 is last color
-
-mycolormap(1,:)=1; % White background
-
-% Rescale according to the value in the magnitude map 
-img_pca(ind_ins)=img_pca(ind_ins)/0.03*63+2;
-img_mag(ind_ins)=img_mag(ind_ins)/0.03*63+2;
-
-%Sagittal
-for i=1:N(1)
-    sz(i)=sum(sum(~~ins_msk(i,:,:)));
-end
-[~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
-
-Slices=ind_srt(1:4);
-hf=figure; hf.Position=[100,300,2000,300]; hf.Color='w';
-for i=1:length(Slices)
-    subplot(1,length(Slices),i)
-    if Mag
-        %1st dimension of image is placed on rows
-        %2nd dimension of image is placed on columns
-        im=image(squeeze(img_mag(Slices(i),min_y:max_y,min_z:max_z)));
-    else
-        im=image(squeeze(img_pca(Slices(i),min_y:max_y,min_z:max_z)));
+    %Sagittal
+    for i=1:N(1)
+        sz(i)=sum(sum(~~ins_msk(i,:,:)));
     end
-    slice_msk=imerode(~~squeeze(ins_msk(Slices(i),min_y:max_y,min_z:max_z)),ones(Erode,Erode));
-    colormap(mycolormap);
-    hold on;
-    gx=squeeze(Gx(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
-    gy=squeeze(Gy(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
-    gz=squeeze(Gz(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
+    [~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
     
-    % Even the magnitude for figure
-    mag=sqrt(gy.^2+gx.^2+gz.^2);
-    gy=gy./mag; gx=gx./mag; gz=gz./mag;
-    
-    u=repmat([1:Ny]',1,Nz); v=repmat([1:Nz],Ny,1); w=ones(Ny,Nz);
-    q=quiver3(v,u,w,gz,gy,gx);
-    
-    %First input is gradient in direction of increasing columns
-    %Second input is gradient in direction of increasing rows
-    q.LineWidth=0.5;
-    q.Color=[192,192,192]/255;
-    q.AutoScaleFactor=2;
-    view(-90, 90);
-    axis off;
-    ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
-    axis equal;
-end
-
-% Coronal
-for i=1:N(2)
-    sz(i)=sum(sum(~~ins_msk(:,i,:)));
-end
-[~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
-Slices=ind_srt(1:4);
-hf=figure; hf.Position=[100,800,2000,300]; hf.Color='w';
-for i=1:length(Slices)
-    subplot(1,length(Slices),i)
-    if Mag
-        %1st dimension of image is placed on rows
-        %2nd dimension of image is placed on columns
-        tmp=squeeze(img_mag(min_x:max_x,Slices(i),min_z:max_z));
-        im=image(tmp);
-    else
-        tmp=squeeze(img_pca(min_x:max_x,Slices(i),min_z:max_z));
-        im=image(tmp);
+    Slices=ind_srt(1:4);
+    hf=figure; hf.Position=[100,300,2000,300]; hf.Color='w';
+    for i=1:length(Slices)
+        subplot(1,length(Slices),i)
+        if Mag
+            %1st dimension of image is placed on rows
+            %2nd dimension of image is placed on columns
+            im=image(squeeze(img_mag(Slices(i),min_y:max_y,min_z:max_z)));
+        else
+            im=image(squeeze(img_pca(Slices(i),min_y:max_y,min_z:max_z)));
+        end
+        slice_msk=imerode(~~squeeze(ins_msk(Slices(i),min_y:max_y,min_z:max_z)),ones(Erode,Erode));
+        colormap(mycolormap);
+        hold on;
+        gx=squeeze(Gx(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
+        gy=squeeze(Gy(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
+        gz=squeeze(Gz(Slices(i),min_y:max_y,min_z:max_z)).*slice_msk;
+        
+        % Even the magnitude for figure
+        mag=sqrt(gy.^2+gx.^2+gz.^2);
+        gy=gy./mag; gx=gx./mag; gz=gz./mag;
+        
+        u=repmat([1:Ny]',1,Nz); v=repmat([1:Nz],Ny,1); w=ones(Ny,Nz);
+        q=quiver3(v,u,w,gz,gy,gx);
+        
+        %First input is gradient in direction of increasing columns
+        %Second input is gradient in direction of increasing rows
+        q.LineWidth=0.5;
+        q.Color=[192,192,192]/255;
+        q.AutoScaleFactor=2;
+        view(-90, 90);
+        axis off;
+        ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
+        axis equal;
     end
-    slice_msk=imerode(~~squeeze(ins_msk(min_x:max_x,Slices(i),min_z:max_z)),ones(Erode,Erode));
-    colormap(mycolormap);
-    hold on;
-    gx=squeeze(Gx(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
-    gy=squeeze(Gy(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
-    gz=squeeze(Gz(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
     
-    % Even the magnitude
-    mag=sqrt(gy.^2+gx.^2+gz.^2);
-    gy=gy./mag; gx=gx./mag; gz=gz./mag;
-    
-    u=repmat([1:Nx]',1,Nz); v=repmat([1:Nz],Nx,1); w=ones(Nx,Nz);
-    q=quiver3(v,u,w,gz,gx,gy);
-    
-    %First input is gradient in direction of increasing columns
-    %Second input is gradient in direction of increasing rows
-    q.LineWidth=0.5;
-    q.Color=[192,192,192]/255;
-    q.AutoScaleFactor=2;
-    view(-90, 90);
-    axis off;
-    ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
-    axis equal;
-end
-
-%Axial
-for i=1:N(3)
-    sz(i)=sum(sum(~~ins_msk(:,:,i)));
-end
-[~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
-Slices=ind_srt(1:4);
-hf=figure; hf.Position=[100,1200,2000,300]; hf.Color='w';
-for i=1:length(Slices)
-    subplot(1,length(Slices),i)
-    if Mag
-        %1st dimension of image is placed on rows
-        %2nd dimension of image is placed on columns
-        tmp=squeeze(img_mag(min_x:max_x,min_y:max_y,Slices(i)));
-        im=image(tmp);
-    else
-        tmp=squeeze(img_pca(min_x:max_x,min_y:max_y,Slices(i)));
-        im=image(tmp);
+    % Coronal
+    for i=1:N(2)
+        sz(i)=sum(sum(~~ins_msk(:,i,:)));
     end
-    slice_msk=imerode(~~squeeze(ins_msk(min_x:max_x,min_y:max_y,Slices(i))),ones(Erode,Erode));
-    colormap(mycolormap);
-    hold on;
-    gx=squeeze(Gx(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
-    gy=squeeze(Gy(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
-    gz=squeeze(Gz(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
+    [~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
+    Slices=ind_srt(1:4);
+    hf=figure; hf.Position=[100,800,2000,300]; hf.Color='w';
+    for i=1:length(Slices)
+        subplot(1,length(Slices),i)
+        if Mag
+            %1st dimension of image is placed on rows
+            %2nd dimension of image is placed on columns
+            tmp=squeeze(img_mag(min_x:max_x,Slices(i),min_z:max_z));
+            im=image(tmp);
+        else
+            tmp=squeeze(img_pca(min_x:max_x,Slices(i),min_z:max_z));
+            im=image(tmp);
+        end
+        slice_msk=imerode(~~squeeze(ins_msk(min_x:max_x,Slices(i),min_z:max_z)),ones(Erode,Erode));
+        colormap(mycolormap);
+        hold on;
+        gx=squeeze(Gx(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
+        gy=squeeze(Gy(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
+        gz=squeeze(Gz(min_x:max_x,Slices(i),min_z:max_z)).*slice_msk;
+        
+        % Even the magnitude
+        mag=sqrt(gy.^2+gx.^2+gz.^2);
+        gy=gy./mag; gx=gx./mag; gz=gz./mag;
+        
+        u=repmat([1:Nx]',1,Nz); v=repmat([1:Nz],Nx,1); w=ones(Nx,Nz);
+        q=quiver3(v,u,w,gz,gx,gy);
+        
+        %First input is gradient in direction of increasing columns
+        %Second input is gradient in direction of increasing rows
+        q.LineWidth=0.5;
+        q.Color=[192,192,192]/255;
+        q.AutoScaleFactor=2;
+        view(-90, 90);
+        axis off;
+        ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
+        axis equal;
+    end
     
-    % Even the magnitude
-    mag=sqrt(gy.^2+gx.^2+gz.^2);
-    gy=gy./mag; gx=gx./mag; gz=gz./mag;
-    
-    u=repmat([1:Nx]',1,Ny); v=repmat([1:Ny],Nx,1); w=ones(Nx,Ny);
-    
-    q=quiver3(v,u,w,gy,gx,gz);
-    
-    %First input is gradient in direction of increasing columns
-    %Second input is gradient in direction of increasing rows
-    q.LineWidth=0.5;
-    q.Color=[192,192,192]/255;
-    q.AutoScaleFactor=2;
-    
-    view(-90, 90);
-    axis off;
-    ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
-    axis equal;
+    %Axial
+    for i=1:N(3)
+        sz(i)=sum(sum(~~ins_msk(:,:,i)));
+    end
+    [~,ind_srt]=sort(sz,'descend'); %find slices with greatest coverage
+    Slices=ind_srt(1:4);
+    hf=figure; hf.Position=[100,1200,2000,300]; hf.Color='w';
+    for i=1:length(Slices)
+        subplot(1,length(Slices),i)
+        if Mag
+            %1st dimension of image is placed on rows
+            %2nd dimension of image is placed on columns
+            tmp=squeeze(img_mag(min_x:max_x,min_y:max_y,Slices(i)));
+            im=image(tmp);
+        else
+            tmp=squeeze(img_pca(min_x:max_x,min_y:max_y,Slices(i)));
+            im=image(tmp);
+        end
+        slice_msk=imerode(~~squeeze(ins_msk(min_x:max_x,min_y:max_y,Slices(i))),ones(Erode,Erode));
+        colormap(mycolormap);
+        hold on;
+        gx=squeeze(Gx(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
+        gy=squeeze(Gy(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
+        gz=squeeze(Gz(min_x:max_x,min_y:max_y,Slices(i))).*slice_msk;
+        
+        % Even the magnitude
+        mag=sqrt(gy.^2+gx.^2+gz.^2);
+        gy=gy./mag; gx=gx./mag; gz=gz./mag;
+        
+        u=repmat([1:Nx]',1,Ny); v=repmat([1:Ny],Nx,1); w=ones(Nx,Ny);
+        
+        q=quiver3(v,u,w,gy,gx,gz);
+        
+        %First input is gradient in direction of increasing columns
+        %Second input is gradient in direction of increasing rows
+        q.LineWidth=0.5;
+        q.Color=[192,192,192]/255;
+        q.AutoScaleFactor=2;
+        
+        view(-90, 90);
+        axis off;
+        ax=gca; ax.XLabel.Visible='on'; ax.YLabel.Visible='on';
+        axis equal;
+    end
 end
 
 
