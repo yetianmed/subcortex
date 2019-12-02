@@ -1,9 +1,14 @@
 function [img_mag_null,img_pca_null]=gradmNull(savg,roiFile,Null)
 % This script generates null data for gradient magnitude
+
+% INPUT
 % savg: similarity matrix
 % NumNull: Number of randomizations
-% roiFile region to test
-% img_mag_null: null data of gradient magnitude   
+% roiFile: region to test
+
+% OUTPUT
+% img_mag_null: null data of gradient magnitude 
+% img_pca_null: null data of eigenmap
 
 % subcortex mask
 insFile='subcortex_mask.nii';

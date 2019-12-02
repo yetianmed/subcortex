@@ -1,4 +1,4 @@
-function [exp_avg,exp_avg_null,z]=do_homogeneity(x,mskFile,parcelFile,MM)
+function [exp_avg,exp_avg_null,z]=do_homogeneity(x,mskFile,parcelFile,gmFile,MM)
 % Input:
 % x: fMRI data matrix,dimension: time x number of all gray matter voxels
 % mskFile: subcortex atlas in NIFTI (*.nii)
@@ -13,9 +13,15 @@ function [exp_avg,exp_avg_null,z]=do_homogeneity(x,mskFile,parcelFile,MM)
 warning off
 
 fprintf('Computing homogeneity for empirical data\n')
+% Subcortex
 [~,sub_msk]=read(mskFile);
 
+% Gray matter
+[~,gm_msk]=read(gmFile);
+ind_msk=find(~~gm_msk);
+
 expl=zeros(1,max(sub_msk(:)));
+T=size(x,1);
 x_roi_mean=zeros(T,max(sub_msk(:)));
 
 for i=1:max(sub_msk(:)) % Loop over every parcel in the atlas
