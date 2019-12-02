@@ -1,6 +1,15 @@
 function [y_img,dice]=svm_test(img_dil,Out,s_test,ind)
+
+% INPUT
+% img_dil:3-D image (matrix) comprises region of interest and its uncertainty zone
+% Out: classifier computed from svm_train.m
+% s_test: similarity matrix of new subject in testing samples
+% ind: index of all subcortical voxels in the 3-D atlas image (MNI152 space)
+
+% OUTPUT
 % y_img: probabilistic map 
 % dice: dice coefficient
+
 Nxyz=size(img_dil);
 
 Mdl=Out.Mdl;
@@ -17,6 +26,7 @@ y_img=zeros(Nxyz);
 
 y_pred=predict(Mdl,s_test);
 [~,tmp]=predict(ScoreMdl,s_test);
+
 %y_pred_score=tmp(:,2);
 tmp_img=zeros(Nxyz);
 tmp_img(ind(ind_both))=tmp(:,2);

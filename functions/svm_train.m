@@ -1,9 +1,15 @@
-function Out=svm_train(subject_train,sFiles,reg,ind)
+function Out=svm_train(J,sFiles,img_dil,ind)
 
-fprintf('\n<strong>Region %d\n',reg)
-fprintf('Training SVM on (%d subjects)...\n',length(subject_train));
+% INPUT:
+% J: number of training subjects
+% sFiles: a string variable with a list of name for the similarity data of
+% all the training samples
+% img_dil: 3-D image (matrix) comprises region of interest and its uncertainty zone
+% ind: index of all subcortical voxels in the 3-D atlas image (MNI152 space)
 
-J=length(subject_train); %number of training subjects
+% OUTPUT:
+% Out: trained SVM model (classifier)
+
 ind1=find(img_dil(ind)==1); %class 1: uncertainty zone
 ind2=find(img_dil(ind)==2); %class 2: region
 ind_both=[ind1;ind2];
