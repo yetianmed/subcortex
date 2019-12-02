@@ -1,11 +1,16 @@
 function s=compute_similarity (x,insFile,gmFile)
+% This script computes similarity matrix between each pair of subcortcial
+% voxels
 
-% x is a matrix of dimension time x number of gray matter voxels
-
+% INPUT:
+% x: fMRI time series, dimension time x number of all gray matter voxels
 % Concatenated fMRI signals of all gray matter voxels
 
-% This script computes similarity matrix between each pair of subcortcial
-% voxels 
+% insFile: binary subcortex mask in NIFTI format (*.nii)
+% gmFile: binary gray matter mask in NIFTI format (*.nii)
+
+% OUTPUT:
+% s: similarity matrix (eta square)
 
 %subcortex mask
 [~,ins_msk]=read(insFile); ind_ins=find(ins_msk);
@@ -19,7 +24,7 @@ for i=1:length(ind_ins)
     ind_ind_ins(i)=find(ind_ins(i)==ind_msk);
 end
 
-T=size(x,1);
+T=size(x,1); % Number of time points
 
 % Demean
 x=detrend(x,'constant'); x=x./repmat(std(x),T,1); %remove mean and make std=1
@@ -39,18 +44,19 @@ if ~any((isnan(x(:)))) % Make sure that all voxels contain no nan
     
     % Correlation
     c=x_ins'*a; c=c/T;
-    zpc=atanh(c);
+    zpc=atanh(c); % fisher's z transformation
     zpc=zpc(:,all(~isnan(zpc)));
     
     clear a
     
-    if size(zpc,2)~=size(c,2)
-        fprintf('Subject %d column deleted\n',nn);
-    end
+    % Compute similarity matrix
+    fprintf('Computing similarity matrix\n')
+    s=eta_squared(zpc); s=single(s);
+    clear zpc
+else
+    fprintf('Error: NAN presented,check your mask\n')
+    s=[];
 end
 
-% Compute similarity matrix
-fprintf('Computing similarity matrix\n')
-s=eta_squared(zpc); s=single(s);
-clear zpc
+
 
