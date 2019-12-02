@@ -1,7 +1,8 @@
-% This script dose a few additional prepocessing steps 
+% This script dose a few additional preprocessing steps on top of HCP
+% minimal preprocessing pipeline (Glasser et al 2013)
 % 1. Spatial smoothing
 % 2. Wishart filtering 
-% And concatenate two runs
+% And concatenate two runs (L-R and R-L phase encoding)
 clear
 close all
 addpath ../masks
@@ -23,10 +24,10 @@ FWHM=6;
 % Voxel size in mm
 voxelsize=2; 
 
-% fMRI data
+% minimal preprocessed fMRI data
 % Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
-dataFile1=[pwd,'/MapGradient/rfMRI_REST1_LR_hp2000_clean.nii.gz'];% L-R phase encoding
-dataFile2=[pwd,'/MapGradient/rfMRI_REST1_RL_hp2000_clean.nii.gz'];% R-L phase encoding
+dataFile1='rfMRI_REST1_LR_hp2000_clean.nii.gz';% L-R phase encoding
+dataFile2='rfMRI_REST1_RL_hp2000_clean.nii.gz';% R-L phase encoding
 
 %subcortex mask
 [~,ins_msk]=read(insFile); ind_ins=find(ins_msk);
@@ -47,7 +48,7 @@ dataFile1=dataFile1(1:end-3);
 
 fprintf('Read and smooth data with FWHM=%dmm\n',FWHM);
 [~,data]=read(dataFile1);
-T=size(data,4);
+T=size(data,4); % Number of time points
 xLR=zeros(T,length(ind_msk));
 frst=0;
 for i=1:T
