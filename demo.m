@@ -24,8 +24,8 @@ gmFile='GMmask.nii';
 fprintf('Computing similarity matrix\n')
 
 % Load time series of all gray matter voxels from one individual  
-load x.mat % x is a matrix of dimension time x number of gray matter voxels. 
-           % x is computed from preprocess.m
+load x.mat % preprocessd fMRI time series. Dimension time x number of gray matter voxels. 
+           % x can be computed from preprocess.m
            % Download this matrix via: 
            % http://connectome.org.au/subcortex/x.zip
 s=compute_similarity(x,insFile,gmFile); % Save the similarity matrix for further analysis
@@ -53,26 +53,20 @@ load savg.mat savg
 % Alternatively, try subcortex_mask_part1.nii
 roiFile='subcortex_mask.nii';
 
-Mag=0; % Mag=0; -> Print out slices, background image is eigenmap;
-       % Mag=1; ->Print out slices, background image is gradient magnitude
-       % Modify colormap in cont_model.m
-Streamlines=1; % 1->Write out vector file for tensor fitting; 0->do not compute
-
 Vn=2; % order of eigenvector to compute.
-      % Vn=2: 2nd eigenvector (Gradient 1)
-      % Vn=3; 3rd eigenvector to compute (Gradient 2)
-      % Vn=4; 4th eigenvector to compute (Gradient 3)
+      % Vn=2: 2nd eigenvector (Gradient I)
+      % Vn=3; 3rd eigenvector to compute (Gradient II)
+      % Vn=4; 4th eigenvector to compute (Gradient III)
       % The first eigenvector (Vn=1) is constant and thus discarded.  
       
-% Prefix name for output nii images
+% Prefix for output NIFTI images
 [~,name]=fileparts(roiFile);
 Prefix=[name,'_Average_'];
 
 % Compute gradient
-% This function writes out two nii images including one eigenmap and one gradient
-% magnitude 
-% Write out a vector file when Streamlines=1
-cont_model(savg,ind_ins_org,roiFile,Mag,Streamlines,Prefix,Vn);
+% by default,this function writes out two NIFTI images: eigenmap and
+% gradient magnitude and vector file for streamlines propogation
+cont_model(savg,ind_ins_org,roiFile,Prefix,Vn);
 
 %% 3.fMRI tractography
 
@@ -175,7 +169,7 @@ addpath ./functions
 roiFile='subcortex_mask_part1.nii';
 [~,name]=fileparts(roiFile);
 
-NumNull=100;% Number of randomizations
+fprintf('Loading similarity matrix\n')
 load savg.mat savg
 
 % This part is time consuming
@@ -184,7 +178,11 @@ Preload=1;
 if Preload
     load GradmNull_subcortex_mask_part1.mat img_mag_null
 else
-    img_mag_null=gradmNull(savg,roiFile,NumNull); 
+    Null.NumNull=100; % Number of randomizations
+    Null.T=2400; % Time points
+    Null.FWHM=6; % Gaussian smooth kernel
+    Null.voxelsize=2; % voxel size (mm)
+    img_mag_null=gradmNull(savg,roiFile,Null); 
     save(['GradmNull_',name,'.mat'],'img_mag_null');   
 end
 
@@ -345,7 +343,10 @@ addpath ./masks
 % Compute the mean homogeneity for Scale II parcellation and its matched random
 % parcellations for single subject (SubID 100206)
 % Use REST2 session fMRI data
-mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_S2_3T.nii'];
+mskFile=[pwd,'/Group-Parcellation/3T/Subcortex-Only/Tian_Subcortex_S2_3T.nii'];
+
+% Gray matter mask
+gmFile='GMmask.nii';
 
 % Generate random parcellations with overall matched parcel size and shape
 % to the empirical parcellation
@@ -357,26 +358,19 @@ parcels_random_all=random_parcels(mskFile,MM);
 parcelFile=['random_parcels_',Prefix,'.mat'];
 save(parcelFile,'parcels_random_all');
 
-% Gray matter mask
-gmFile='GMmask.nii';
+% Load example fMRI data
+fprintf('Loading fMRI data...\n')
+load x.mat % preprocessd fMRI time series. Dimension time x number of gray matter voxels. 
+           % x can be computed from preprocess.m
+           % Download this matrix via: 
+           % http://connectome.org.au/subcortex/x.zip
 
-% Gaussian smoothness in mm
-FWHM=6; 
-
-% Voxel size in mm
-voxelsize=2; 
-
-% fMRI data
-% Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
-dataFile1=[pwd,'/Homogeneity/rfMRI_REST2_LR_hp2000_clean.nii.gz'];% L-R phase encoding
-dataFile2=[pwd,'/Homogeneity/rfMRI_REST2_RL_hp2000_clean.nii.gz'];% R-L phase encoding
-
-% Compute mean homogeneity
-[exp_avg,exp_avg_null,z]=do_homogeneity(dataFile1,dataFile2,mskFile,parcelFile,gmFile,MM,FWHM,voxelsize);
+% Compute parcellation homogeneity
+[exp_avg,exp_avg_null,z]=do_homogeneity(x,mskFile,parcelFile,gmFile,MM);
 % exp_avg: mean homogeneity for the empirical parcellation 
 % exp_avg_null: mean homogeneity for random parcellattions
 % Repeat this process for all subjects (n=1021) with REST2 session data
-% Example: subcortex_parcellation_S2_3T_homogeneity.mat
+% Example: Tian_Subcortex_S2_3T_homogeneity.mat
 
 %% 9.Individual parcellation
 
@@ -386,7 +380,7 @@ addpath ./Individual-Parcellation
 % indiviudal parcellation
 
 % Group parcellation
-mskFile=[pwd,'/Group-Parcellation/3T/subcortex_parcellation_S4_3T.nii'];
+mskFile=[pwd,'/Group-Parcellation/3T/Subcortex-Only/Tian_Subcortex_S4_3T.nii'];
 [~,parc]=read(mskFile);
 
 %Extent of dilation (integer value)
@@ -417,8 +411,8 @@ fprintf('Dilated-to-original ratio (voxels): %0.2f (min: %0.2f, max: %0.2f)\n',m
 % Random selected training samples (n=100)
 
 % load SVM_Subjects.mat subject_train
-% 
-% % similariry matrix in training samples
+% % subject_train is a string variable with a list of subject ID
+
 % % sFiles is a string variable with a list of name for the similarity data for
 % % all the training samples
 % % Load each sFile sequencially in svm_train.m for the sake of memory
@@ -427,9 +421,13 @@ fprintf('Dilated-to-original ratio (voxels): %0.2f (min: %0.2f, max: %0.2f)\n',m
 % end
 
 % This part is time consuming
-reg=1;% 1->N,region to train
+reg=1;% 1->N,which region to train
+J=length(subject_train);
+fprintf('\n<strong>Region %d\n',reg)
+fprintf('Training SVM on (%d subjects)...\n',J);
 
-Out=svm_train(subject_train,sFiles,reg,ind);
+img_dil_reg=img_dil{reg};
+Out=svm_train(J,sFiles,img_dil_reg,ind);
 save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_dil','ind','-v7.3');
 
 % Predict individual parcellation
@@ -440,12 +438,12 @@ save(['region',num2str(reg),'_Dil',num2str(DilThresh),'_train.mat'],'Out','img_d
 % Similarity matrix for one testing subject
 % Download the similarity matrix via: 
 % http://connectome.org.au/subcortex/REST2_001_s.zip
-SubID='001'; % example subject ID
+SubID='001'; % example subject
 load REST2_001_s.mat s 
 
 % Compute the probabilistic map 
-img_dil=img_dil{reg};
-[y_img,dice]=svm_test(img_dil,Out,s,ind);
+img_dil_reg=img_dil{reg};
+[y_img,dice]=svm_test(img_dil_reg,Out,s,ind);
 mat2nii(y_img,'region1_probmap_001.nii',size(y_img),32,mskFile);
 fprintf('region %d,subject %s,Dice=%.2f\n',reg,SubID,dice)
 
@@ -483,11 +481,3 @@ for i=1:5
     
     xlabel(['IC',num2str(i)],'FontSize',12);
 end
-
-
-
-
-
-
-
-
