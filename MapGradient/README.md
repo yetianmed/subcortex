@@ -10,7 +10,7 @@ Masks are in cropped space (bounding box) to aid visualization
 
 trackvis_txt: Colormap
 
-### Function required
+### Code required
 
 [**read.m**](../functions/read.m): Read NIFTI image into MATLAB
 
