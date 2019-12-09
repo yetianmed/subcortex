@@ -8,7 +8,12 @@ Masks are in cropped space (bounding box) to aid visualization
 
 trackvis_txt: Colormap
 
-### Functions required
+### Function required
+
+[**read.m**](../functions/read.m): Read NIFTI image into MATLAB
+
+[**write.m**](../functions/write.m): Write out NIFTI image
+
 [**compute_similarity.m**](../functions/compute_similarity.m): Compute the similarity in the functional fingerprint between each pair of subcortical voxels.
 
 [**connectopic_laplacian.m**](../functions/connectopic_laplacian.m): Compute the Laplacian eigenmaps
