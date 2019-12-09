@@ -13,7 +13,7 @@ trackvis_txt: Colormap
 
 [**read.m**](../functions/read.m): Read NIFTI image into MATLAB
 
-[**write.m**](../functions/write.m): Write out NIFTI image
+[**write.m**](../functions/write.m) and [**mat2nii.m**](../functions/mat2nii.m): Write out NIFTI image
 
 [**compute_similarity.m**](../functions/compute_similarity.m): Compute the similarity in the functional fingerprint between each pair of subcortical voxels.
 
