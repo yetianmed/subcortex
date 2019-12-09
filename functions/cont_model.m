@@ -24,7 +24,7 @@ ins_msk(ind_ins)=1;
 fprintf('Computing Gradient %d\n',Vn-1);
 
 %Compute Laplacian
-Null=0; % Use gradmNull.m computing null data
+Null=0; % Compute the null data using gradmNull.m 
 img_pca=connectopic_laplacian(s,ind_ins,N,Vn,Null);
 
 %Dilate image to avoid edge effects when computing gradients
