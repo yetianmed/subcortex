@@ -9,6 +9,16 @@ Masks are in cropped space (bounding box) to aid visualization
 trackvis_txt: Colormap
 
 ### Functions required
+[**compute_similarity.m**](../functions/compute_similarity.m): Compute the similarity in the functional fingerprint between each pair of subcortical voxels.
+
+[**connectopic_laplacian.m**](../functions/connectopic_laplacian.m): Compute the Laplacian eigenmaps
+
+[**compute_gradients.m**](../functions/compute_gradients.m): Compute the eigenmap's gradient magnitude
+
+[**compute_gradients_local.m**](../functions/compute_gradients_local.m): An auxiliary function of compute_gradients.m
+
+[**cont_model.m**](../functions/cont_model.m): This script shows how to use the above three functions
+
 
 
 
