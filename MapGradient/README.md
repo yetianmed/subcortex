@@ -1,3 +1,5 @@
+Compute Laplacian eigenmaps to represent spatial gradients in resting-state functional connectivity across the subcortical volume.
+
 ### File description
 
 subcortex_mask_Average_Vn2_eigenvector.nii: Group-consensus eigenmap of Gradient I
