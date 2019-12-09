@@ -1,1 +1,7 @@
-ica.mat: Consensus de-mixing matrix (w_final) estimated using independent component analysis. Each column corresponds to a behavioral item and each rows corresponds to one of the five dimensions (components). 
+Decompose high-dimensional behavioral data for HCP participants into 5 behavioral dimensions using independent component analysis (ICA). Due to participant data access restrictions imposed by the HCP, the individual weights for the behavioral dimensions cannot be made publicly available. We can only make available the de-mixing matrix (5 latent dimensions x 109 behavioral items). Please contact us for further information.
+
+ica.mat contains two variables 
+
+w_final: de-mixing matrix
+
+header3: name of each behavioral item
