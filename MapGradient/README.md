@@ -1,6 +1,6 @@
 Compute Laplacian eigenmaps to represent spatial gradients in resting-state functional connectivity across the subcortical volume.
 ***
-### File description
+## File description
 
 subcortex_mask_Average_Vn2_eigenvector.nii: Group-consensus eigenmap of Gradient I
 
@@ -9,8 +9,7 @@ subcortex_mask_Average_Vn2_magnitude.nii: Gradient magnitude of Gradient I
 Masks are in cropped space (bounding box) to aid visualization 
 
 trackvis_txt: Colormap
-
-### Code required
+## Code
 
 [**read.m**](../functions/read.m): Read NIFTI image into MATLAB
 
