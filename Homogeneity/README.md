@@ -7,6 +7,8 @@ Tian_Subcortex_S2_3T_homogeneity.mat: Homogeneity estimated for Scale II parcell
 random_parcels_Tian_Subcortex_S2_3T.mat: example random parcellations 
 
 ## Code 
+[**read.m**](../functions/read.m): Read NIFTI into MATLAB
+
 [**random_parcels.m**](../functions/random_parcels.m): Generate random parcellations that matched in size with empirical parcellation
 
 [**do_homogeneity.m**](../functions/do_homogeneity.m): Compute the parcellation homogeneity 
