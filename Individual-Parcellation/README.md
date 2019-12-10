@@ -1,3 +1,5 @@
+Personalize the atlas using support-vector machine learning to account for individual variation in regional boundaries.
+***
 ## File description
 region1_probmap_001.nii: Classification probablistic map of region 1 (HIP-head-m1-rh) for example subject 001
 
