@@ -12,6 +12,6 @@ See [**demo.m**](../demo.m)
 
 [**track_clust.m**](../functions/track_clust.m): Compute distance between each pair of streamlines
 
-[**diversity_curve.m**](../functions/diversity_curve.m): Project eigenmap and gradient magntidue onto streamlines, yielding diversity curves
+[**diversity_curve.m**](../functions/diversity_curve.m): Project eigenmap and gradient magntidue onto streamlines, yielding diversity curves for parametrization
 
 
