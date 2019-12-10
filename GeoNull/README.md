@@ -5,4 +5,8 @@ GradmNull_subcortex_mask_part1.mat: example null data.
 
 dcurve_avg_vn2_null_part1.mat: example diversity curves
 ## Code 
+[**read.m**](../functions/read.m): Read NIFTI image into MATLAB
+
+[**write.m**](../functions/write.m) and [**mat2nii.m**](../functions/mat2nii.m): Write out NIFTI image
+
 [**gradmNull.m**](../functions/gradmNull.m): Generate the null data 
