@@ -15,7 +15,7 @@ trackvis_txt: Colormap
 
 [**write.m**](../functions/write.m) and [**mat2nii.m**](../functions/mat2nii.m): Write out NIFTI image
 
-[**compute_similarity.m**](../functions/compute_similarity.m): Compute the similarity in the functional fingerprint between each pair of subcortical voxels.
+[**compute_similarity.m**](../functions/compute_similarity.m): Compute the similarity ([**eta_squared.m**](../functions/eta_squared.m) in the functional fingerprint between each pair of subcortical voxels.
 
 [**connectopic_laplacian.m**](../functions/connectopic_laplacian.m): Compute the Laplacian eigenmaps
 
