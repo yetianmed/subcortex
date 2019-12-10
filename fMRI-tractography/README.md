@@ -4,7 +4,7 @@ Identify peaks in the gradient magnitude images using an analogue of diffusion M
 See [**demo.m**](../demo.m)
 
 ## Code 
-[**symmetrize_vector**](../functions/symmetrize_vector.m): Symmetrize vectors across two hemisphere if needed
+[**symmetrize_vector**](../functions/symmetrize_vector.m): Symmetrize vectors across two hemispheres if needed
 
 [**vector2tensor.m**](../functions/vector2tensor.m): Convert vector to tensor for performing tractography in Diffusion Toolkit
 
