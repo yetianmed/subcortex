@@ -69,7 +69,7 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
 ### fMRI-tractography
 
-   Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called *gradientography*, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volume. 
+   Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called ***gradientography***, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volume. 
 
 ### GeoNull
 
