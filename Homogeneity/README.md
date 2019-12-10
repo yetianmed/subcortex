@@ -9,6 +9,6 @@ random_parcels_Tian_Subcortex_S2_3T.mat: Example random parcellations
 ## Code 
 [**read.m**](../functions/read.m): Read NIFTI into MATLAB
 
-[**random_parcels.m**](../functions/random_parcels.m): Generate random parcellations that matched in size with empirical parcellation
+[**random_parcels.m**](../functions/random_parcels.m): Generate random parcellations that matched in size with the empirical parcellation
 
 [**do_homogeneity.m**](../functions/do_homogeneity.m): Compute the parcellation homogeneity 
