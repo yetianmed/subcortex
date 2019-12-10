@@ -63,19 +63,19 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 - [subcortex_mask_part1_Average_Vn2_VectorFile.zip](http://www.connectome.org.au/subcortex/subcortex_mask_part1_Average_Vn2_VectorFile.zip)
 - [subcortex_mask_part1_track_distance.zip](http://www.connectome.org.au/subcortex/subcortex_mask_part1_track_distance.zip)
 
-### MapGradient
+### [MapGradient](./MapGradient)
 
    Compute Laplacian eigenmaps to represent spatial gradients in resting-state functional connectivity across the subcortical volume.
 
-### fMRI-tractography
+### [fMRI-tractography](./fMRI-tractography)
 
    Identify peaks in the gradient magnitude images using an analogue of diffusion MRI tractography called ***gradientography***, also known as fMRI tractography. Gradientography enables parameterization of the gradient magnitude images in terms of curvilinear trajectories through the subcortical volume. 
 
-### GeoNull
+### [GeoNull](./GeoNull)
 
    Model selection: Use a geometry-preserving null model to test the null hypothesis that gradient each magnitude peak is not significantly larger in magnitude than what could be expected due to chance and/or the effects of geometry. A regional boundary is delineated at the location of gradient magnitude peaks for which the null hypothesis can be rejected. Spatial variation is represented as a continuum when the null hypothesis cannot be rejected. 
 
-### Group-Parcellation
+### [Group-Parcellation](./Group-Parcellation)
 
    This folder stores the group-consensus atlas in NIFTI and CIFTI format for download. 
 
@@ -85,15 +85,15 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
    [**7T:**](/Group-Parcellation/7T/) Scales I-IV of the group-consensus atlas (7 Tesla). 
 
-### Homogeneity
+### [Homogeneity](./Homogeneity)
 
    Compute the parcel homogenenity of the new atlas and other measures of validation to quantify atlas performance. 
 
-### Individual-Parcellation
+### [Individual-Parcellation](./Individual-Parcellation)
 
    Personalize the atlas using support-vector machine learning to account for individual variation in regional boundaries. 
    
-### Behavior
+### [Behavior](./Behavior)
 
    Decompose high-dimensional behavioral data for HCP participants into 5 behavioral dimensions using independent component analysis (ICA). [Due to participant data access restrictions imposed by the HCP](https://www.humanconnectome.org/study/hcp-young-adult/document/restricted-data-usage), the individual weights for the behavioral dimensions cannot be made publicly available. We can only make available the de-mixing matrix (5 latent dimensions x 109 behavioral items). Please contact us for further information.  
    
