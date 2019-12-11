@@ -21,7 +21,7 @@ trackvis_txt: Colormap
 
 [**compute_gradients.m**](../functions/compute_gradients.m): Compute the eigenmap's gradient magnitude
 
-[**compute_gradients_local.m**](../functions/compute_gradients_local.m): An auxiliary function of compute_gradients.m
+[**compute_gradients_local.m**](../functions/compute_gradients_local.m): Auxiliary function for compute_gradients.m
 
 [**cont_model.m**](../functions/cont_model.m): This script shows how to use the above three functions
 
