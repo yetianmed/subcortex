@@ -1,5 +1,5 @@
-% This demo script provides data description and analysis demos related to: 
-% Tian et al 
+% This demo script provides data description and analysis demonstration related to: 
+% Tian et al 2019
 % Hierarchical organization of the human subcortex unveiled with functional connectivity gradients
 
 % Data for each section can be accessed in each corresponding subfolder directly or via
@@ -7,7 +7,7 @@
 % Call functions from #functions#
 % Code was tested in MATLAB R2017b 
 
-% Contact Ye Tian, yetianmed@gmail.com     
+% Contact Dr Ye Tian, yetianmed@gmail.com     
 
 %% 1.Compute subcortex-to-subcortex similarity matrix 
 
@@ -131,12 +131,12 @@ J=300; % Depend on the length of streamlines. 300 Works well here.
 % http://connectome.org.au/subcortex/subcortex_mask_part1_track_distance.zip
 Preload=1;
 if Preload
-    load subcortex_mask_part1_track_distance.mat M dsym voxelsize
+    load subcortex_mask_part1_track_distance.mat M dsym VoxelSize
     % M: coordinates (xyz) for each streamline
     % dsym: distance matrix between each pair of streamlines
-    % voxelsize in mm
+    % VoxelSize in mm
 else
-    [M,dsym,voxelsize]=track_clust(TrackFile,Lthresh,J);
+    [M,dsym,VoxelSize]=track_clust(TrackFile,Lthresh,J);
 
 end
 
@@ -149,7 +149,7 @@ eigFile='subcortex_mask_part1_Average_Vn2_eigenvector.nii';
 
 % Check the distribution of distance to determine the threshold
 ThreshDist=1; 
-[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,voxelsize,magFile,eigFile,ThreshDist);
+[dcurve_mag_clust1_avg,dcurve_eig_clust1_avg,length_x1]=diversity_curve(M,dsym,J,VoxelSize,magFile,eigFile,ThreshDist);
 % dcurve_mag_clust1_avg: diversity curve mapped for gradient magnitude
 % dcurve_eig_clust1_avg: diversity curve mapped for eigenmap
 % length_x1: length of streamline in mm
