@@ -1,11 +1,7 @@
-% This demo script provides data description and analysis demonstration related to: 
-% Tian et al 2019
-% Hierarchical organization of the human subcortex unveiled with functional connectivity gradients
-
+% This demo script provides data description and analysis demonstration
 % Data for each section can be accessed in each corresponding subfolder directly or via
 % external link
-% Call functions from #functions#
-% Code was tested in MATLAB R2017b 
+% Call functions from #functions# 
 
 % Contact Dr Ye Tian, yetianmed@gmail.com     
 
