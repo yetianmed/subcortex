@@ -2,9 +2,9 @@
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code that was used to map the atlas. 
 
-[Manuscript preprint on biorxiv](https://biorxiv.org/cgi/content/short/2020.01.13.903542v1)
+Read the manuscript preprint on [biorxiv](https://biorxiv.org/cgi/content/short/2020.01.13.903542v1)
 
-[Twitter thread](https://twitter.com/DrBreaky/status/1206560282488668165)
+Check out the [Twitter thread](https://twitter.com/DrBreaky/status/1206560282488668165)
 
 **I just want the atlas! Where can I find it?** Go to the [Subcortex-Only](/Group-Parcellation/3T/Subcortex-Only/) folder. There you will find the group-consensus atlas in NIFTI and CIFTI format for download. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases and the combined cortex-subcortex atlases can be found in the [Cortex-Subcortex](/Group-Parcellation/3T/Cortex-Subcortex/) folder. Continue reading below for further details and FAQs. 
 
@@ -52,7 +52,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 ![alt test](images/leaddbs2.JPG)
 
-Above image shows the new atlas combined with [Lead-DBS](https://www.lead-dbs.org/) to evaluate the effects of deep brain stimulation (DBS) in an individual with obsessive-compulsive disorder. Brackground is a 100 micron brain scan. Delineations of caudate (green) and accumbens (yellow) in the new atlas are shown. The DBS electrode is positioned within the BNST. Image courtesy of Dr Philip Mosely (QIMR Bergohofer Medical Research Institute).   
+Above image shows the new atlas combined with [Lead-DBS](https://www.lead-dbs.org/) to evaluate the effects of deep brain stimulation (DBS) in an individual with obsessive-compulsive disorder. Brackground is a 100 micron brain scan. Delineations of caudate (green) and accumbens (yellow) in the new atlas are shown. The DBS electrode is positioned within the BNST. Image courtesy of Dr Philip Mosely (QIMR Berghofer Medical Research Institute).   
 
 ***
 
