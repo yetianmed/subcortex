@@ -47,6 +47,9 @@ Manuscript preprint: https://biorxiv.org/cgi/content/short/2020.01.13.903542v1
 - Michael Breakspear: mjbreaks@gmail.com
 - Andrew Zalesky: azalesky@unimelb.edu.au
 
+
+![alt test](images/leaddbs.jpg)
+
 ***
 
 ## Data and Code
