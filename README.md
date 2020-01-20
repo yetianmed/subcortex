@@ -2,7 +2,7 @@
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code that was used to map the atlas. 
 
-Manuscript preprint: https://biorxiv.org/cgi/content/short/2020.01.13.903542v1
+Manuscript preprint relevant to this work: https://biorxiv.org/cgi/content/short/2020.01.13.903542v1
 
 **I just want the atlas! Where can I find it?** Go to the [Subcortex-Only](/Group-Parcellation/3T/Subcortex-Only/) folder. There you will find the group-consensus atlas in NIFTI and CIFTI format for download. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases and the combined cortex-subcortex atlases can be found in the [Cortex-Subcortex](/Group-Parcellation/3T/Cortex-Subcortex/) folder. Continue reading below for further details and FAQs. 
 
@@ -48,7 +48,7 @@ Manuscript preprint: https://biorxiv.org/cgi/content/short/2020.01.13.903542v1
 - Andrew Zalesky: azalesky@unimelb.edu.au
 
 
-![alt test](images/leaddbs2.jpg)
+![alt test](images/leaddbs2.JPG)
 
 ***
 
