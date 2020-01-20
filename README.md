@@ -49,6 +49,7 @@ Manuscript preprint relevant to this work: https://biorxiv.org/cgi/content/short
 
 
 ![alt test](images/leaddbs2.JPG)
+Image shows the new atlas combined with [Lead-DBS](https://www.lead-dbs.org/) to evaluate the effects of deep brain stimulation (DBS) in an individual with obsessive-compulsive disorder. Brackground is a 100 micron brain scan. Delineations of caudate (green) and accumbens (yellow) in the new atlas are shown. The DBS electrode is positioned within the BNST. Image courtesy of Dr Philip Mosely (QIMR Bergohofer Medical Research Institute).   
 
 ***
 
