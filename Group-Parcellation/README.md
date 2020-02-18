@@ -33,7 +33,7 @@ The atlas is provided in CIFTI format to facilitate further processing with HCP 
 |Tian_Subcortex_S3_3T_32k.dscalar.nii |
 |Tian_Subcortex_S4_3T_32k.dscalar.nii |
 
-***dlabel.nii***: Subcortex atlas (3T) incorporated into existing cortext-only atlases 
+***dlabel.nii***: Subcortex atlas (3T) incorporated into existing cortex-only atlases 
 
 | File name | 
 | ----------------- |
