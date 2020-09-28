@@ -1,8 +1,8 @@
 ![alt test](images/logo2.png)
 
 We are delighted to provide the neuroscience community with a new hierarchical MRI atlas of the human subcortex. This repository provides the new atlas for download and stores the code that was used to map the atlas. 
-
-Read the [manuscript](https://rdcu.be/b7N8K) published in Nature Neuroscience 
+*
+Read the [manuscript](https://rdcu.be/b7N8K) published in *Nature Neuroscience*
 
 Check out the [Twitter thread](https://twitter.com/DrBreaky/status/1206560282488668165)
 
