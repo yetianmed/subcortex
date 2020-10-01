@@ -4,7 +4,7 @@ We are delighted to provide the neuroscience community with a new hierarchical M
 
 Read the [manuscript](https://rdcu.be/b7N8K) published in *Nature Neuroscience*
 
-Check out the [Twitter thread](https://twitter.com/DrBreaky/status/1206560282488668165)
+Check out the [Twitter thread](https://twitter.com/AndrewZalesky/status/1310749000908197888)
 
 **I just want the atlas! Where can I find it?** Go to the [Subcortex-Only](/Group-Parcellation/3T/Subcortex-Only/) folder. There you will find the group-consensus atlas in NIFTI and CIFTI format for download. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases and the combined cortex-subcortex atlases can be found in the [Cortex-Subcortex](/Group-Parcellation/3T/Cortex-Subcortex/) folder. Continue reading below for further details and FAQs. 
 
