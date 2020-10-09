@@ -1,6 +1,8 @@
 The group-consensus atlas is provided for download in NIFTI and CIFTI (dlabel and dscalar) format. 
 
-The atlas is delineated in 6th generation MNI space (MNI ICBM 152 nonlinear). 
+The atlas is delineated in 6th generation MNI space (MNI ICBM 152 nonlinear).
+
+The atlas is also available in MNI152NLin2009cAsym space.
 
 To facilitate whole-brain connectome mapping, the 3 Tesla version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. 
 
