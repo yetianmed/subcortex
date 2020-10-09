@@ -1,6 +1,6 @@
 The group-consensus atlas is provided for download in NIFTI and CIFTI (dlabel and dscalar) format. 
 
-The atlas is delineated in 6th generation MNI space (MNI ICBM 152 nonlinear).
+The atlas is delineated in MNI152NLin6Asym space.
 
 The atlas is also available in MNI152NLin2009cAsym space.
 
