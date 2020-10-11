@@ -47,5 +47,13 @@ The atlas is provided in CIFTI format to facilitate further processing with HCP 
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S2.dlabel.nii |  
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S3.dlabel.nii | 
 | Q1-Q6_RelatedValidation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_Tian_Subcortex_S4.dlabel.nii | 
+| Schaefer2018_400Parcels_7Networks_order_Tian_Subcortex_S1.dlabel.nii|
+| Schaefer2018_400Parcels_7Networks_order_Tian_Subcortex_S2.dlabel.nii|
+| Schaefer2018_400Parcels_7Networks_order_Tian_Subcortex_S3.dlabel.nii|
+| Schaefer2018_400Parcels_7Networks_order_Tian_Subcortex_S4.dlabel.nii|
+| Schaefer2018_400Parcels_17Networks_order_Tian_Subcortex_S1.dlabel.nii|
+| Schaefer2018_400Parcels_17Networks_order_Tian_Subcortex_S2.dlabel.nii|
+| Schaefer2018_400Parcels_17Networks_order_Tian_Subcortex_S3.dlabel.nii|
+| Schaefer2018_400Parcels_17Networks_order_Tian_Subcortex_S4.dlabel.nii|
 
-*Gordon et al 2016, Cerebral Cortex; Glasser et al 2016, Nature*
+*Gordon et al 2016, Cerebral Cortex; Glasser et al 2016, Nature; Schaefer et al 2018 Cerebral Cortex*
