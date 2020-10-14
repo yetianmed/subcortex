@@ -6,7 +6,9 @@ Read the [manuscript](https://rdcu.be/b7N8K) published in *Nature Neuroscience*
 
 Check out the [Twitter thread](https://twitter.com/AndrewZalesky/status/1310749000908197888)
 
-**I just want the atlas! Where can I find it?** Click the [download link](https://www.nitrc.org/docman/view.php/1469/160703/Tian2020MSA) Go to the [Subcortex-Only](/Group-Parcellation/3T/Subcortex-Only/) folder. There you will find the group-consensus atlas in NIFTI and CIFTI format for download. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases and the combined cortex-subcortex atlases can be found in the [Cortex-Subcortex](/Group-Parcellation/3T/Cortex-Subcortex/) folder. Continue reading below for further details and FAQs. 
+**I just want the atlas! Where can I find it?** Click the [download link](https://www.nitrc.org/docman/view.php/1469/160703/Tian2020MSA) to download the atlas (2MB) at once.
+
+After uncompressing the zip file, navigate to the [3T/Subcortex-Only] folder. There you will find the group-consensus atlas in NIFTI and CIFTI format. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases including Glasser2016, Gordon 2016 and Schaefer2018 and the combined cortex-subcortex atlases can be found in the [3T/Cortex-Subcortex] folder. Continue reading below for further details and FAQs. 
 
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
@@ -14,8 +16,9 @@ Check out the [Twitter thread](https://twitter.com/AndrewZalesky/status/13107490
 - Personalizable to represent individual variation in regional boundaries.
 - Seamlessly integratable into established cortex-only parcellation atlases.
 - Includes subdivisions of the striatum, thalamus, hippocampus, amygdala and globus pallidus. 
-
-**Downloading the atlas:** The group-consensus atlas is provided in NIFTI and CIFTI (dlabel and dscalar) format for download in the [Group-Parcellation](/Group-Parcellation/) folder. If you are only here to download the atlas, this is the only directory that you need to visit. The atlas is delineated in 6th generation MNI space. This is the same space used by the HCP. To facilitate whole-brain connectome mapping, the 3T version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. A naming convention (anatomical nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
+- The atlas is delineated in MNI152 6th generation space, which is the same space used by the HCP. 
+- The atlas is also registered to MNI152 2009cAsym space, which is the default template adopted by fMRIPrep preprocessing toolbox.
+- A naming convention (anatomical nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
 **Atlas scales:** The atlas is available in four scales, labeled Scales I, II, III and IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale is bilaterally symmetric and defines a self-contained parcellation atlas. 
 
