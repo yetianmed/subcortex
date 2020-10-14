@@ -8,7 +8,7 @@ Check out the [Twitter thread](https://twitter.com/AndrewZalesky/status/13107490
 
 **I just want the atlas! Where can I find it?** Click the [download link](https://www.nitrc.org/docman/view.php/1469/160703/Tian2020MSA) to download the atlas (2MB) at once.
 
-After uncompressing the zip file, navigate to the */3T/Subcortex-Only* folder. There you will find the group-consensus atlas in NIFTI and CIFTI format. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases including Glasser2016, Gordon2016 and Schaefer2018 and the combined cortex-subcortex atlases can be found in the */3T/Cortex-Subcortex* folder. Continue reading below for further details and FAQs. 
+After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder. There you will find the group-consensus atlas in NIFTI and CIFTI format. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases including Glasser2016, Gordon2016 and Schaefer2018 and the combined cortex-subcortex atlases can be found in the **/3T/Cortex-Subcortex** folder. Continue reading below for further details and FAQs. 
 
 **Atlas features:** 
 - Volumetric parcellation of the human subcortex representing consensus among more than 1000 healthy adults.
