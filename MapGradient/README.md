@@ -19,9 +19,9 @@ trackvis_txt: Colormap
 
 [**connectopic_laplacian.m**](../functions/connectopic_laplacian.m): Compute the Laplacian eigenmaps
 
-[**compute_grads.m**](../functions/compute_gradients.m): Compute the eigenmap's gradient magnitude
+[**compute_gradientss.m**](../functions/compute_gradients.m): Compute the eigenmap's gradient magnitude
 
-[**compute_gradients_local.m**](../functions/compute_grads_local.m): Auxiliary function for compute_gradients.m
+[**compute_grads_local.m**](../functions/compute_grads_local.m): Auxiliary function for compute_gradients.m
 
 [**cont_model.m**](../functions/cont_model.m): This script shows how to use the above three functions
 
