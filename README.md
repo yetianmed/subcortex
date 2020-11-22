@@ -52,6 +52,7 @@ After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder.
 - Michael Breakspear: mjbreaks@gmail.com
 - Andrew Zalesky: azalesky@unimelb.edu.au
 
+![alt test](images/front_cover.jpeg)
 
 ![alt test](images/leaddbs2.JPG)
 
