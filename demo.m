@@ -96,7 +96,7 @@ mat2nii(msk,[name,'_mask.nii'],size(msk),32,'subcortex_mask.nii');
 fprintf('Next: do tractography in Diffusion Toolkit using the DTI model\n')
 % Parameters: Angel threshold: 35; -rseed 20;Propogation algorithm: Interpolated Streamline 
 
-% If visulize tensors in MRtrix
+% If visualize tensors in MRtrix
 img_mrtrix=tensor_model_2(Gx_org,Gy_org,Gz_org);
 fprintf('Write out %s\n',[name,'_tensor_model_2.nii'])
 mat2nii(img_mrtrix,[name,'_tensor_model_2.nii'],size(img_mrtrix),32,'subcortex_mask.nii');
