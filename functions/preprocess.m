@@ -24,7 +24,7 @@ FWHM=6;
 % Voxel size in mm
 voxelsize=2; 
 
-% minimal preprocessed fMRI data
+% minimally preprocessed fMRI data
 % Data Source: Human Connectome Project: https://www.humanconnectome.org/ 
 dataFile1='rfMRI_REST1_LR_hp2000_clean.nii.gz';% L-R phase encoding
 dataFile2='rfMRI_REST1_RL_hp2000_clean.nii.gz';% R-L phase encoding
