@@ -62,7 +62,9 @@ Prefix=[name,'_Average_'];
 % Compute gradient
 % by default,this function writes out two NIFTI images: eigenmap and
 % gradient magnitude and vector file for streamlines propogation
-cont_model(savg,ind_ins_org,roiFile,Prefix,Vn);
+Mag=1;
+Streamlines=1;
+cont_model(savg,ind_ins_org,roiFile,Mag,Streamlines,Prefix,Vn);
 
 %% 3.fMRI tractography
 
