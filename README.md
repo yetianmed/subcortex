@@ -16,8 +16,8 @@ After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder.
 - Personalizable to represent individual variation in regional boundaries.
 - Seamlessly integratable into established cortex-only parcellation atlases.
 - Includes subdivisions of the striatum, thalamus, hippocampus, amygdala and globus pallidus. 
-- The atlas is delineated in MNI152 Nonlinear 6th generation space, which is the same space used by the [Human Connectome Project](https://github.com/Washington-University/HCPpipelines). 
-- The atlas is also available in MNI152 Nonlinear 2009cAsym space, which is the standard template adopted by [fMRIPrep](https://fmriprep.org/en/stable/) preprocessing toolbox.
+- The atlas is delineated in MNI152 Nonlinear 6th generation (MNI152NLin6Asym) space, which is the same space used by the [Human Connectome Project](https://github.com/Washington-University/HCPpipelines). 
+- The atlas is also available in MNI152 Nonlinear 2009cAsym (MNI152NLin2009cAsym) space, which is the standard template adopted by [fMRIPrep](https://fmriprep.org/en/stable/) preprocessing toolbox.
 - A naming convention (anatomical nomenclature) for all regions is provided in a text file that accompanies each atlas scale.   
 
 **Atlas scales:** The atlas is available in four scales, labeled Scales I, II, III and IV. Scale I is the coarsest atlas and recapitulates 8 well-known anatomical nuclei, while Scale IV is the finest and delineates 27 bilateral regions of the subcortex. Each scale is bilaterally symmetric and defines a self-contained parcellation atlas. 
