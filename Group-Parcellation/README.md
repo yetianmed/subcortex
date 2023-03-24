@@ -4,7 +4,7 @@ The atlas is delineated in MNI152NLin6Asym space.
 
 The atlas is also available in MNI152NLin2009cAsym space.
 
-To facilitate whole-brain connectome mapping, the 3 Tesla version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. 
+To facilitate whole-brain connectome mapping, the 3 Tesla version of the atlas is also integrated into several existing cortex-only parcellation atlases and the combined cortex-subcortex atlases are provided for download in CIFTI format. The NIFTI format of the integrated atlas (volumetric) is available for Schaefer's atlas in 200-,300-,400-parcel resolutions.  
 
 A naming convention (anatomical nomenclature) and the MNI centroid coordinates (mm) for all regions are provided in text files that accompanies each atlas scale.
 
