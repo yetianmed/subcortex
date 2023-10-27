@@ -105,7 +105,7 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 
    Personalize the atlas using support-vector machine learning to account for individual variation in regional boundaries. 
 
-   Click [here](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalised atlas 921 HCP participants (78MB). 
+   Click [here](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalised atlas for 921 HCP participants (78MB). 
    
 ### [Behavior](./Behavior)
 
