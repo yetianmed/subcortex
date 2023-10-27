@@ -8,8 +8,6 @@ Check out the [Twitter thread](https://twitter.com/AndrewZalesky/status/13107490
 
 **I just want the atlas! Where can I find it?** Click the [download link](https://www.nitrc.org/frs/download.php/13364/Tian2020MSA_v1.4.zip) to download the group-consensus atlas (17MB). 
 
-Download the probablistic map of the personalised atlas for 921 HCP participants [here](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) (78MB). 
-
 After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder. There you will find the group-consensus atlas in NIFTI and CIFTI format. To make it convenient for you to map whole-brain connectomes, the atlas is also integrated into several well-known cortex-only parcellation atlases including [Glasser2016](https://www.nature.com/articles/nature18933), [Gordon2016](https://academic.oup.com/cercor/article/26/1/288/2367115) and [Schaefer2018](https://academic.oup.com/cercor/article/28/9/3095/3978804) and the combined cortex-subcortex atlases can be found in the **/3T/Cortex-Subcortex** folder. Continue reading below for further details and FAQs. 
 
 **Atlas features:** 
@@ -106,6 +104,8 @@ Auxiliary functons are stored in the [functions](/functions/) folder. This folde
 ### [Individual-Parcellation](./Individual-Parcellation)
 
    Personalize the atlas using support-vector machine learning to account for individual variation in regional boundaries. 
+
+   Click [here](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalised atlas 921 HCP participants (78MB). 
    
 ### [Behavior](./Behavior)
 
