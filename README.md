@@ -43,7 +43,9 @@ After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder.
 
 **To smooth or not?** Spatial smoothing of fMRI data can be detrimental. Given the relatively low signal-to-noise ratio of the subcortex, we minimally smoothed the fMRI data before mapping the atlas (FWHM: 4-6mm). Minimal spatial smoothing of the subcortical fMRI data should be considered before connectome mapping, although it is important to note that this is a contentious issue.     
 
-**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, further work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. You can click [here](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalized atlas for 921 HCP participants (78MB). Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
+**How can I personalize the atlas?** We have trained machine learning classifiers to recognize each region comprising the Scale IV atlas. This enables personalized atlases to be mapped for each individual, where regional boundaries can vary between individuals. However, further work is needed to evaluate how well the classifiers generalize to non-HCP fMRI data. The group-consensus atlas should be sufficient for most applications. 
+
+If required, you can click the [download link](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalized atlas for 921 HCP participants (78MB). Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
 
 **Contact us**
 
