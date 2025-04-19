@@ -50,7 +50,7 @@ If required, you can click the [download link](https://www.nitrc.org/frs/downloa
 **Like a two-dimensional visualization?**
 Check out the [Python package](https://github.com/anniegbryant/subcortex_visualization) kindly provided by Annie Bryant to create 2D subcortex atlas images
 
-![alt test](images/2D.png)
+![alt test](images/Tian_S1_and_S2_3D_to_2D_schematic.png)
 
 **Contact us**
 
