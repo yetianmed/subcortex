@@ -48,9 +48,9 @@ After uncompressing the zip file, navigate to the **/3T/Subcortex-Only** folder.
 If required, you can click the [download link](https://www.nitrc.org/frs/download.php/13717/Tian2020MSAProbmap.zip) to download the probablistic map of the personalized atlas for 921 HCP participants (78MB). Further details about personalization can be found in the [Individual-Parcellation](/Individual-Parcellation/) folder. 
 
 **Like a two-dimensional visualisation?**
-Check out the [python package](https://github.com/anniegbryant/subcortex_visualization) kindly provided by Annie Bryant to create 2D subcortex atlas images
+Check out the [Python package](https://github.com/anniegbryant/subcortex_visualization) kindly provided by Annie Bryant to create 2D subcortex atlas images
 
-![alt test](images/2D_S1.png)
+![alt test](images/2D.png)
 
 **Contact us**
 
